@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4cn7wpra0n2e"]
+
+[ext_resource type="Texture2D" uid="uid://csq4er2aa10gw" path="res://assets/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_05.png" id="1_1dqwh"]
+[ext_resource type="Script" uid="uid://bnog30yhh306x" path="res://script/bullet.gd" id="1_blkrf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_blkrf"]
+radius = 4.00312
+height = 17.9999
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbwb3"]
+atlas = ExtResource("1_1dqwh")
+region = Rect2(180, 63, 15, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlb16"]
+atlas = ExtResource("1_1dqwh")
+region = Rect2(195, 63, 15, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya8pc"]
+atlas = ExtResource("1_1dqwh")
+region = Rect2(210, 63, 15, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qt2u"]
+atlas = ExtResource("1_1dqwh")
+region = Rect2(225, 63, 15, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnlhc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbwb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlb16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya8pc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qt2u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Bullet" type="Area2D" groups=["bullet"]]
+collision_layer = 32
+collision_mask = 38
+script = ExtResource("1_blkrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.57394
+shape = SubResource("CapsuleShape2D_blkrf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bnlhc")
+frame = 2
+frame_progress = 0.973154
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.026
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
