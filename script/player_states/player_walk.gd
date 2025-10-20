@@ -1,16 +1,23 @@
 extends Player_gravity
 
 func start():
-	player.play_animation(player.animations.walk)
+	player.anim.play("walk")
 
 func on_physic_process(delta):
-	#controlled_node.play_animation(controlled_node.animtion.walk)
-	player.velocity.x = Input.get_axis("left","right") * speed 
+	super(delta)
+	var dir = Input.get_axis("left", "right")
+	if dir == 0:
+		state_machine.change_to("idle")
+	player.velocity.x = dir * speed
 
 func on_input(event):
-	if Input.is_action_just_pressed("jump") and player.is_on_floor():
-		state_machine.change_to("player_jump")
-	elif Input.is_action_just_pressed("attack"):
-		state_machine.change_to("player_attack")
-	elif not (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
-		state_machine.change_to("player_idle")
+	if event.is_action_pressed("jump") and player.is_on_floor():
+		state_machine.change_to("jump")
+	if event.is_action_pressed("attack"):
+		state_machine.change_to("attack")
+	#if Input.is_action_just_pressed("jump") and player.is_on_floor():
+		#state_machine.change_to("player_jump")
+	#elif Input.is_action_just_pressed("attack"):
+		#state_machine.change_to("player_attack")
+	#elif not (Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+		#state_machine.change_to("player_idle")

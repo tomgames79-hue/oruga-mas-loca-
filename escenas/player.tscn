@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bfmmbs4umwox5"]
+[gd_scene load_steps=27 format=3 uid="uid://bfmmbs4umwox5"]
 
 [ext_resource type="Script" uid="uid://x61hyriodxwg" path="res://script/player.gd" id="1_kkt6c"]
 [ext_resource type="Texture2D" uid="uid://bmlct4haybvlg" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 2.png" id="2_rbrud"]
@@ -180,68 +180,6 @@ _data = {
 &"walk": SubResource("Animation_gd0y7")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8mtn0"]
-animation = &"attack"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t5tro"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5vuvg"]
-animation = &"jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ay70r"]
-animation = &"walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eolwv"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yf8pj"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_neflo"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mn7w3"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jt2sh"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sdwtm"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_abcdt"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jr8nv"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4csdi"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nrm58"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hydpe"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hbygi"]
-states/Start/position = Vector2(191, 100)
-states/attack/node = SubResource("AnimationNodeAnimation_8mtn0")
-states/attack/position = Vector2(191, 212)
-states/idle/node = SubResource("AnimationNodeAnimation_t5tro")
-states/idle/position = Vector2(400, 100)
-states/jump/node = SubResource("AnimationNodeAnimation_5vuvg")
-states/jump/position = Vector2(573, 100)
-states/walk/node = SubResource("AnimationNodeAnimation_ay70r")
-states/walk/position = Vector2(400, 212)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_eolwv"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_yf8pj"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_neflo"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_mn7w3"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_jt2sh"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_sdwtm"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_abcdt"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_jr8nv"), "jump", "walk", SubResource("AnimationNodeStateMachineTransition_4csdi"), "walk", "attack", SubResource("AnimationNodeStateMachineTransition_nrm58"), "attack", "walk", SubResource("AnimationNodeStateMachineTransition_hydpe")]
-graph_offset = Vector2(-137, -5)
-
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 22
 script = ExtResource("1_kkt6c")
@@ -284,19 +222,30 @@ shape = SubResource("RectangleShape2D_j7xnp")
 wait_time = 0.15
 one_shot = true
 
-[node name="StateMachine" parent="." node_paths=PackedStringArray("default_state", "state_label") instance=ExtResource("4_k4kro")]
-default_state = NodePath("player_idle")
+[node name="StateMachine" parent="." node_paths=PackedStringArray("player", "state_label", "current_state", "states") instance=ExtResource("4_k4kro")]
+player = NodePath("..")
 state_label = NodePath("../StateLabel")
+current_state = NodePath("player_idle")
+states = [NodePath("player_idle"), NodePath("player_walk"), NodePath("player_jump"), NodePath("player_falling"), NodePath("player_attack")]
+
+[node name="player_idle" parent="StateMachine" index="0"]
+nombre = "idle"
 
 [node name="player_walk" parent="StateMachine" index="1"]
 speed = 500.0
+nombre = "walk"
 
 [node name="player_jump" parent="StateMachine" index="2"]
 speed = 300.0
 jump_speed = -900.0
+nombre = "jump"
 
 [node name="player_falling" parent="StateMachine" index="3"]
 speed = 500.0
+nombre = "falling"
+
+[node name="player_attack" parent="StateMachine" index="4"]
+nombre = "attack"
 
 [node name="StateLabel" type="Label" parent="."]
 top_level = true
@@ -311,6 +260,7 @@ offset_right = 20.0
 offset_bottom = -39.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "asdasd"
 
 [node name="AttackCooldown" type="Timer" parent="."]
 wait_time = 0.5
@@ -321,10 +271,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_t3yu4")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_hbygi")
-anim_player = NodePath("../anim")
-
 [connection signal="area_entered" from="hard_box" to="." method="_on_hard_box_area_entered"]
+[connection signal="animation_finished" from="anim" to="StateMachine/player_attack" method="_on_anim_animation_finished"]
 
 [editable path="StateMachine"]
