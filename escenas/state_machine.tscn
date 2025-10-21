@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cepd2ax0xgbcx"]
+[gd_scene load_steps=8 format=3 uid="uid://cepd2ax0xgbcx"]
 
 [ext_resource type="Script" uid="uid://oqhj23r84aqd" path="res://script/state_machine.gd" id="1_mtg4q"]
 [ext_resource type="Script" uid="uid://cvco0wi2yqd2c" path="res://script/player_states/player_idle.gd" id="2_aqxq1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bmx75yysggx7v" path="res://script/player_states/player_jump.gd" id="4_pfkfp"]
 [ext_resource type="Script" uid="uid://bmscjmm2b0k64" path="res://script/player_states/player_falling.gd" id="5_nul74"]
 [ext_resource type="Script" uid="uid://viwkdruptfcb" path="res://script/player_states/player_attack.gd" id="6_lddy6"]
+[ext_resource type="Script" uid="uid://camxmjlk0bi70" path="res://script/player_states/player_shoot.gd" id="7_aqxq1"]
 
 [node name="StateMachine" type="Node"]
 script = ExtResource("1_mtg4q")
@@ -24,3 +25,7 @@ script = ExtResource("5_nul74")
 
 [node name="player_attack" type="Node" parent="."]
 script = ExtResource("6_lddy6")
+
+[node name="player_shoot" type="Node" parent="."]
+script = ExtResource("7_aqxq1")
+nombre = "shoot"

@@ -5,7 +5,7 @@ var states:Player_states = Player_states.new()
 var animations:Player_animations = Player_animations.new()
 @onready var state_label: Label = $StateLabel
 @onready var anim: AnimationPlayer = $anim
-#@export var gravity : float = 10 
+
 
 @export_category("MOVEMENT")
 @export var gravity_scale = 2
@@ -89,27 +89,11 @@ func _physics_process(delta: float) -> void:
 	#if not is_on_floor():
 		#velocity += get_gravity() * gravity_scale * delta 
 
-#func handle_acceleration(input_axis, delta):
-	#if not is_on_floor(): return
-	#if input_axis != 0:
-		#play_animation(Player_animations.walk)
-		#velocity.x = move_toward(velocity.x, speed * input_axis, acceleration * delta)
-	#else:
-		#play_animation(Player_animations.idle)
 
-#func apply_friction(input_axis, delta):
-	#if input_axis == 0 and is_on_floor():
-		#velocity.x = move_toward(velocity.x, 0, friction * delta)
 
-#func handle_jump():
-	#if is_on_floor() or coyote_jump.time_left > 0:
-		#if Input.is_action_just_pressed("jump"):
-			#velocity.y = jump_force
-			#coyote_jump.stop()
-			#
-	#elif not is_on_floor():
-		#if Input.is_action_just_pressed("jump") and velocity.y < jump_force / 2:
-			#velocity.y = jump_force / 2
+
+
+
 
 
 

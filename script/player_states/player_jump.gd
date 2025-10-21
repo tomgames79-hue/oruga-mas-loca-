@@ -8,22 +8,23 @@ func start():
 
 func on_physic_process(delta):
 	super(delta)
-	var input_axis = Input.get_axis("left","right")
+	
 	if player.is_on_floor() or player.coyote_jump.time_left > 0:
 		if Input.is_action_just_pressed("jump"):
 			player.velocity.y = player.jump_force
 			player.coyote_jump.stop()
-			
+			state_machine.change_to("idle")
 	elif not player.is_on_floor():
 		if Input.is_action_just_pressed("jump") and player.velocity.y < player.jump_force / 2:
 			player.velocity.y = player.jump_force / 2
+	var was_on_floor = player.is_on_floor()
 	handle_air_acceleration(input_axis, delta)
+	apply_friction(input_axis, delta)
+	handle_acceleration(input_axis, delta)
+	var just_left_edge = was_on_floor and not player.is_on_floor() and player.velocity.y >= 0 
+	if just_left_edge:
+		player.coyote_jump.start()
 
 func on_input(event):
 	if event.is_action_pressed("attack"):
 		state_machine.change_to("attack")
-
-func handle_air_acceleration(input_axis, delta):
-	if player.is_on_floor(): return
-	if input_axis != 0:
-		player.velocity.x = move_toward(player.velocity.x, player.speed * input_axis, player.acceleration * delta)

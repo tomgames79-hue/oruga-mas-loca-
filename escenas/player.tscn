@@ -1,22 +1,27 @@
-[gd_scene load_steps=27 format=3 uid="uid://bfmmbs4umwox5"]
+[gd_scene load_steps=34 format=3 uid="uid://bfmmbs4umwox5"]
 
 [ext_resource type="Script" uid="uid://x61hyriodxwg" path="res://script/player.gd" id="1_kkt6c"]
 [ext_resource type="Texture2D" uid="uid://bmlct4haybvlg" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 2.png" id="2_rbrud"]
 [ext_resource type="Texture2D" uid="uid://ckgatgea3kp4w" path="res://assets/morpho/morpho walk/SpriteSheet Walk 2.png" id="2_t3yu4"]
 [ext_resource type="Texture2D" uid="uid://dc4a6p5o424wf" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 1.png" id="3_8b7ct"]
 [ext_resource type="Texture2D" uid="uid://6ptxh64dgtt" path="res://assets/morpho/Ataque Melee/SpriteSheet Attack 2 (2).png" id="3_8mtn0"]
-[ext_resource type="Texture2D" uid="uid://bkoplqrc6i1p1" path="res://assets/morpho/Ataque Melee/SpriteSheet Attack 2 (4).png" id="3_63xfq"]
 [ext_resource type="Texture2D" uid="uid://bgv5gv624cmk6" path="res://assets/morpho/morpho walk/SpriteSheet Walk 1.png" id="3_r4hsq"]
 [ext_resource type="Texture2D" uid="uid://dg2g2fso510jb" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 3.png" id="4_63xfq"]
 [ext_resource type="PackedScene" uid="uid://cepd2ax0xgbcx" path="res://escenas/state_machine.tscn" id="4_k4kro"]
 [ext_resource type="Texture2D" uid="uid://dhxarbgpv3hy1" path="res://assets/morpho/morpho walk/SpriteSheet Walk 3.png" id="4_sacnx"]
 [ext_resource type="Texture2D" uid="uid://c3jn44auwl3us" path="res://assets/morpho/Ataque Melee/SpriteSheet Attack 2 (1).png" id="4_t5tro"]
 [ext_resource type="Texture2D" uid="uid://b7l35vakak7ak" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 4.png" id="5_3w4lm"]
-[ext_resource type="Texture2D" uid="uid://t1t0hcagtnvx" path="res://assets/morpho/Ataque Melee/SpriteSheet Attack 2 (3).png" id="5_5vuvg"]
 [ext_resource type="Texture2D" uid="uid://cbpop53a1nfl5" path="res://assets/morpho/morpho walk/SpriteSheet Walk 4.png" id="5_g1ak7"]
 [ext_resource type="Texture2D" uid="uid://b8v0cah6su0c6" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 5.png" id="6_8mtn0"]
+[ext_resource type="Texture2D" uid="uid://cixjj2xxn86wu" path="res://assets/morpho/Ataque Melee/SpriteSheet Attack 2 (2)(2).png" id="6_t5tro"]
+[ext_resource type="Texture2D" uid="uid://bey5h8yj03ydb" path="res://assets/morpho/Ataque Melee/SpriteSheet Attack 2 (3)(3).png" id="7_5vuvg"]
 [ext_resource type="Texture2D" uid="uid://bubppy1moovm1" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 6.png" id="7_t5tro"]
 [ext_resource type="Texture2D" uid="uid://csfh63acq8a04" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 7.png" id="8_5vuvg"]
+[ext_resource type="Texture2D" uid="uid://cygbr2nj3nnt4" path="res://assets/morpho/Ataque Melee/SpriteSheet Attack 2 (4)(4).png" id="8_ay70r"]
+[ext_resource type="Texture2D" uid="uid://iimx6kq5nns" path="res://assets/morpho/Ataque distancia/SpriteSheet Ant 1.png" id="19_yf8pj"]
+[ext_resource type="Texture2D" uid="uid://cm2lb2gvmfhwx" path="res://assets/morpho/Ataque distancia/SpriteSheet Ant 2.png" id="20_neflo"]
+[ext_resource type="Texture2D" uid="uid://isasadxtu26" path="res://assets/morpho/Ataque distancia/SpriteSheet Ant 3.png" id="21_mn7w3"]
+[ext_resource type="Texture2D" uid="uid://c21wtru7uyab1" path="res://assets/morpho/Ataque distancia/SpriteSheet Ant 4.png" id="22_jt2sh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkt6c"]
 radius = 17.0
@@ -106,7 +111,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("4_t5tro"), ExtResource("3_8mtn0"), ExtResource("5_5vuvg"), ExtResource("3_63xfq")]
+"values": [ExtResource("4_t5tro"), ExtResource("6_t5tro"), ExtResource("7_5vuvg"), ExtResource("8_ay70r")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -131,6 +136,23 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(528.696, -127.811), Vector2(528.696, -127.811), Vector2(1001.74, -153.373), Vector2(1224.35, -76.6863)]
+}
+
+[sub_resource type="Animation" id="Animation_t5tro"]
+resource_name = "falling"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_sacnx")]
 }
 
 [sub_resource type="Animation" id="Animation_kkt6c"]
@@ -171,12 +193,31 @@ tracks/0/keys = {
 "values": [ExtResource("3_r4hsq"), ExtResource("2_t3yu4"), ExtResource("4_sacnx"), ExtResource("5_g1ak7")]
 }
 
+[sub_resource type="Animation" id="Animation_sdwtm"]
+resource_name = "shoot"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("19_yf8pj"), ExtResource("20_neflo"), ExtResource("21_mn7w3"), ExtResource("22_jt2sh")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t3yu4"]
 _data = {
 &"RESET": SubResource("Animation_t3yu4"),
 &"attack": SubResource("Animation_k4kro"),
+&"falling": SubResource("Animation_t5tro"),
 &"idle": SubResource("Animation_kkt6c"),
 &"jump": SubResource("Animation_j7xnp"),
+&"shoot": SubResource("Animation_sdwtm"),
 &"walk": SubResource("Animation_gd0y7")
 }
 
@@ -217,6 +258,7 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
 position = Vector2(56.75, -1.5)
 shape = SubResource("RectangleShape2D_j7xnp")
+disabled = true
 
 [node name="coyote_jump" type="Timer" parent="."]
 wait_time = 0.15
@@ -226,7 +268,7 @@ one_shot = true
 player = NodePath("..")
 state_label = NodePath("../StateLabel")
 current_state = NodePath("player_idle")
-states = [NodePath("player_idle"), NodePath("player_walk"), NodePath("player_jump"), NodePath("player_falling"), NodePath("player_attack")]
+states = [NodePath("player_idle"), NodePath("player_walk"), NodePath("player_jump"), NodePath("player_falling"), NodePath("player_attack"), NodePath("player_shoot")]
 
 [node name="player_idle" parent="StateMachine" index="0"]
 nombre = "idle"
@@ -248,6 +290,7 @@ nombre = "falling"
 nombre = "attack"
 
 [node name="StateLabel" type="Label" parent="."]
+visible = false
 top_level = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -273,5 +316,6 @@ libraries = {
 
 [connection signal="area_entered" from="hard_box" to="." method="_on_hard_box_area_entered"]
 [connection signal="animation_finished" from="anim" to="StateMachine/player_attack" method="_on_anim_animation_finished"]
+[connection signal="animation_finished" from="anim" to="StateMachine/player_shoot" method="_on_anim_animation_finished"]
 
 [editable path="StateMachine"]
