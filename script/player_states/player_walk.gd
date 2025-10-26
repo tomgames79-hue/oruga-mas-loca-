@@ -17,6 +17,8 @@ func on_input(event):
 		state_machine.change_to("jump")
 	if event.is_action_pressed("attack"):
 		state_machine.change_to("attack")
+	if event.is_action_pressed("shoot"):
+		state_machine.change_to("shoot")
 	#if Input.is_action_just_pressed("jump") and player.is_on_floor():
 		#state_machine.change_to("player_jump")
 	#elif Input.is_action_just_pressed("attack"):

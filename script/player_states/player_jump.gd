@@ -2,8 +2,7 @@ extends Player_gravity
 
 
 func start():
-	#player.play_animation(player.animations.jump)
-	#player.velocity.x = Input.get_axis("left", "right") * speed 
+	player.anim.play("jump")
 	player.velocity.y = player.jump_force
 
 func on_physic_process(delta):
@@ -28,3 +27,5 @@ func on_physic_process(delta):
 func on_input(event):
 	if event.is_action_pressed("attack"):
 		state_machine.change_to("attack")
+	if event.is_action_pressed("shoot"):
+		state_machine.change_to("shoot")

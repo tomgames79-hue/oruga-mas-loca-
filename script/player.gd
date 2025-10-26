@@ -35,8 +35,8 @@ var doble_salto_adquirido := false
 var dash_adquirido := false
 var disparo_adquirido := false
 
-var lista_habilidades_poseidas : Array = ["atacar", "salto_largo"]
-var lista_habilidades_equipadas : Array = []
+var lista_habilidades_poseidas : Array = ["atacar", "doble_salto", "dash", "disparo"]
+#var lista_habilidades_equipadas : Array = []
 
 @onready var state_machine: StateMachine = $StateMachine
 
@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 	state_machine.current_state.on_physic_process(delta)
 	flip()
 	move_and_slide()
+	
 	#state_label.global_position = self.global_position + Vector2(0, -50)
 	#var input_axis = Input.get_axis("left","right")
 	#
@@ -69,25 +70,7 @@ func _physics_process(delta: float) -> void:
 	#
 	#var was_on_floor = is_on_floor()
 	#
-	##DISPARO
-	#if Input.is_action_just_pressed("shoot"):
-		#if attack_cooldown.is_stopped():
-			#attack_cooldown.start()
-			#var shoot = bullet.instantiate()
-			#get_parent().add_child(shoot)
-			#shoot.position = $Sprite2D.global_position
-			#if not facing_right:
-				#shoot.scale.x *= -1
-				#shoot.velocidad_bullet *= -1
-	#
-	#move_and_slide()
-	#var just_left_edge = was_on_floor and not is_on_floor() and velocity.y >= 0 
-	#if just_left_edge:
-		#coyote_jump.start()
-#
-#func apply_gravity(delta):
-	#if not is_on_floor():
-		#velocity += get_gravity() * gravity_scale * delta 
+
 
 
 
@@ -111,8 +94,21 @@ func _on_hard_box_area_entered(area: Area2D) -> void:
 		print("perdiste vida")
 		health -= 1
 
-#func play_animation(animation_name:String):
-	#var state_machine: AnimationNodeStateMachinePlayback = animation_tree.get("parameters/playback")
-	#state_machine.travel(animation_name)
-	##anim.play(animation_name)
-	##await anim.animation_finished
+
+func disparo():
+	if Input.is_action_just_pressed("shoot"):
+		if attack_cooldown.is_stopped():
+			attack_cooldown.start()
+			var shoot = bullet.instantiate()
+			get_parent().add_child(shoot)
+			shoot.position = $Sprite2D.global_position
+			if not facing_right:
+				shoot.scale.x *= -1
+				shoot.velocidad_bullet *= -1
+	#var just_left_edge = was_on_floor and not is_on_floor() and velocity.y >= 0 
+	#if just_left_edge:
+		#coyote_jump.start()
+
+func apply_gravity(delta):
+	if not is_on_floor():
+		velocity += get_gravity() * gravity_scale * delta 
