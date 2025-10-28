@@ -2,8 +2,11 @@ extends Player_gravity
 
 
 func start():
-	player.anim.play("jump")
-	player.velocity.y = player.jump_force
+	if not player.jump_egg:
+		state_machine.change_to("idle")
+	else: 
+		player.anim.play("jump")
+		player.velocity.y = player.jump_force
 
 func on_physic_process(delta):
 	super(delta)

@@ -26,6 +26,10 @@ var facing_right = true
 @export var cooldown = 0.5
 @onready var attack_cooldown: Timer = $AttackCooldown
 
+@export_category("EGGS")
+@export var jump_egg = false
+@export var attack_egg = false
+@export var shoot_egg = false
 const bullet = preload("res://escenas/bullet.tscn")
 
 
@@ -57,7 +61,7 @@ func _physics_process(delta: float) -> void:
 	state_machine.current_state.on_physic_process(delta)
 	flip()
 	move_and_slide()
-	
+	#disparo()
 	#state_label.global_position = self.global_position + Vector2(0, -50)
 	#var input_axis = Input.get_axis("left","right")
 	#
@@ -69,7 +73,9 @@ func _physics_process(delta: float) -> void:
 	#flip()
 	#
 	#var was_on_floor = is_on_floor()
-	#
+		#var just_left_edge = was_on_floor and not is_on_floor() and velocity.y >= 0 
+	#if just_left_edge:
+		#coyote_jump.start()
 
 
 
@@ -90,13 +96,13 @@ func flip():
 
 
 func _on_hard_box_area_entered(area: Area2D) -> void:
+	print(jump_egg, area.jump)
 	if area.is_in_group("enemy"):
 		print("perdiste vida")
 		health -= 1
-
-
+		
 func disparo():
-	if Input.is_action_just_pressed("shoot"):
+	#if Input.is_action_just_pressed("shoot"):
 		if attack_cooldown.is_stopped():
 			attack_cooldown.start()
 			var shoot = bullet.instantiate()
@@ -105,9 +111,7 @@ func disparo():
 			if not facing_right:
 				shoot.scale.x *= -1
 				shoot.velocidad_bullet *= -1
-	#var just_left_edge = was_on_floor and not is_on_floor() and velocity.y >= 0 
-	#if just_left_edge:
-		#coyote_jump.start()
+
 
 func apply_gravity(delta):
 	if not is_on_floor():

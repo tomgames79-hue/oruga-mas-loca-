@@ -288,10 +288,16 @@ position = Vector2(1227, 1073)
 shape = SubResource("WorldBoundaryShape2D_38jo4")
 
 [node name="Egg" parent="." instance=ExtResource("15_38jo4")]
-position = Vector2(125, 91)
+position = Vector2(506, 884)
+jump = true
 
 [node name="Egg2" parent="." instance=ExtResource("15_38jo4")]
-position = Vector2(2608, -714)
+position = Vector2(591, 878)
+jump = true
+attack = true
 
 [node name="Egg3" parent="." instance=ExtResource("15_38jo4")]
-position = Vector2(83, -999)
+position = Vector2(678, 864)
+jump = true
+attack = true
+shoot = true

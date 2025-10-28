@@ -2,7 +2,10 @@ extends Player_gravity
 
 
 func start():
-	player.anim.play("shoot")
+	if not player.shoot_egg:
+		state_machine.change_to("idle")
+	else:
+		player.anim.play("shoot")
 	
 
 
