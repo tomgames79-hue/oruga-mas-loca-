@@ -8,9 +8,11 @@ func on_physic_process(delta):
 	var dir = Input.get_axis("left", "right")
 	if dir == 0:
 		state_machine.change_to("idle")
-	player.velocity.x = dir * speed
-	apply_friction(input_axis, delta)
-	handle_acceleration(input_axis, delta)
+	#player.velocity.x = dir * speed
+	handle_acceleration(dir,speed, delta)
+	apply_friction(dir, delta)
+	
+
 
 func on_input(event):
 	if event.is_action_pressed("jump") and player.is_on_floor():

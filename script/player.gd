@@ -46,13 +46,14 @@ var lista_habilidades_poseidas : Array = ["atacar", "doble_salto", "dash", "disp
 
 
 func _ready() -> void:
+	global_position = GameGlobals.player_position
+	$"../GUI".actualizar_vida(health)
 	$hit_box/CollisionShape2D.disabled = true
 	$Sprite2D/SpriteBrazo.hide()
 	anim.play("idle")
 
 func _process(delta: float) -> void:
-	if health <= 0:
-		get_tree().reload_current_scene()
+	pass
 
 func _input(event: InputEvent) -> void:
 	state_machine.current_state.on_input(event)
@@ -69,15 +70,6 @@ func _physics_process(delta: float) -> void:
 	#handle_acceleration(input_axis, delta)
 	#apply_friction(input_axis, delta)
 	#handle_jump()
-	#handle_air_acceleration(input_axis, delta)
-	#flip()
-	#
-	#var was_on_floor = is_on_floor()
-		#var just_left_edge = was_on_floor and not is_on_floor() and velocity.y >= 0 
-	#if just_left_edge:
-		#coyote_jump.start()
-
-
 
 
 
@@ -96,11 +88,13 @@ func flip():
 
 
 func _on_hard_box_area_entered(area: Area2D) -> void:
-	print(jump_egg, area.jump)
+	#print(jump_egg, area.jump)
 	if area.is_in_group("enemy"):
 		print("perdiste vida")
 		health -= 1
-		
+		update_life()
+		if health <= 0:
+			get_tree().call_deferred("reload_current_scene")
 func disparo():
 	#if Input.is_action_just_pressed("shoot"):
 		if attack_cooldown.is_stopped():
@@ -116,3 +110,6 @@ func disparo():
 func apply_gravity(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * gravity_scale * delta 
+
+func update_life():
+	$"../GUI".actualizar_vida(health)

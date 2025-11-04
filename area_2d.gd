@@ -6,7 +6,12 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	print ("huevo +1")
-	body.jump_egg = jump
-	body.attack_egg = attack
-	body.shoot_egg = shoot
+	body.health = 5
+	body.update_life()
+	if jump:
+		body.jump_egg = jump
+	if attack: 
+		body.attack_egg = attack
+	if shoot:
+		body.shoot_egg = shoot
 	queue_free()

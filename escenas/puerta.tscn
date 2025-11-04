@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://co050tba58qdn"]
+
+[ext_resource type="Script" uid="uid://b6jcpp272274e" path="res://escenas/puerta.gd" id="1_r5d6k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jsmn"]
+size = Vector2(61, 88)
+
+[node name="Puerta" type="Area2D"]
+collision_layer = 64
+script = ExtResource("1_r5d6k")
+nivel_objetivo_path = "uid://bl00c6ptvsrol"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_5jsmn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
