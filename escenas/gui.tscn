@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://0mt647w0c2vw"]
+
+[ext_resource type="Script" uid="uid://dhg8r8lfolwxp" path="res://script/gui.gd" id="1_wl3mk"]
+[ext_resource type="Texture2D" uid="uid://3vnyeolaxlrf" path="res://assets/morpho/Proyecto nuevo.png" id="2_ym7kp"]
+
+[node name="GUI" type="CanvasLayer" node_paths=PackedStringArray("lista_vida")]
+script = ExtResource("1_wl3mk")
+lista_vida = [NodePath("HBoxContainer/TextureRect"), NodePath("HBoxContainer/TextureRect2"), NodePath("HBoxContainer/TextureRect3"), NodePath("HBoxContainer/TextureRect4"), NodePath("HBoxContainer/TextureRect5")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 43.0
+offset_bottom = 43.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_ym7kp")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_ym7kp")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_ym7kp")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_ym7kp")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_ym7kp")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Heart" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(47.2499, 38.25)
+scale = Vector2(0.0497397, 0.0532407)
+texture = ExtResource("2_ym7kp")

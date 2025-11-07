@@ -31,16 +31,10 @@ var facing_right = true
 @export var attack_egg = false
 @export var shoot_egg = false
 const bullet = preload("res://escenas/bullet.tscn")
-
-
-
 var ataque_adquirido := false
 var doble_salto_adquirido := false
 var dash_adquirido := false
 var disparo_adquirido := false
-
-var lista_habilidades_poseidas : Array = ["atacar", "doble_salto", "dash", "disparo"]
-#var lista_habilidades_equipadas : Array = []
 
 @onready var state_machine: StateMachine = $StateMachine
 
@@ -62,14 +56,7 @@ func _physics_process(delta: float) -> void:
 	state_machine.current_state.on_physic_process(delta)
 	flip()
 	move_and_slide()
-	#disparo()
-	#state_label.global_position = self.global_position + Vector2(0, -50)
-	#var input_axis = Input.get_axis("left","right")
-	#
-	#apply_gravity(delta)
-	#handle_acceleration(input_axis, delta)
-	#apply_friction(input_axis, delta)
-	#handle_jump()
+
 
 
 
@@ -95,6 +82,7 @@ func _on_hard_box_area_entered(area: Area2D) -> void:
 		update_life()
 		if health <= 0:
 			get_tree().call_deferred("reload_current_scene")
+
 func disparo():
 	#if Input.is_action_just_pressed("shoot"):
 		if attack_cooldown.is_stopped():

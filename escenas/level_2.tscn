@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://bl00c6ptvsrol"]
+[gd_scene load_steps=7 format=4 uid="uid://bl00c6ptvsrol"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_tx4cn"]
+[ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_xjtvu"]
+[ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="3_i6cw0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xjtvu"]
 
@@ -159,3 +161,10 @@ tile_map_data = PackedByteArray("AAAAAAAAAQACAAYAAAAAAAEAAQACAAYAAAAAAAIAAQACAAY
 tile_set = SubResource("TileSet_nvrge")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_xjtvu")]
+position = Vector2(317, 0)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="GUI" parent="." instance=ExtResource("3_i6cw0")]
