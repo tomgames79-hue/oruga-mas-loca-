@@ -22,8 +22,8 @@ shape = SubResource("RectangleShape2D_nvkc6")
 
 [node name="ExclamationMark" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(8, -83)
-scale = Vector2(0.34, 0.286)
+position = Vector2(8, -91)
+scale = Vector2(0.372, 0.333)
 texture = ExtResource("3_emnu0")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
