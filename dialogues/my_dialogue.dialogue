@@ -2,27 +2,24 @@
 if GameGlobals.veces_hablaste_cucaracha == 0:
 	do GameGlobals.veces_hablaste_cucaracha += 1
 	morpho: ...
-	cucaracha: que onda [wave]rey[/wave].[wait=0.5] se te cayo la corona. 
-	cucaracha: naaa mentira no te asustes.
-	cucaracha: te queria preguntar que sabor de helado te gusta mas.
-
-	cucaracha: menta granizada o kinotos al whisky.
-	- menta granizada
-		cucaracha: sos un genio y te admiro una banda.
-		set GameGlobals.le_caes_bien_a_la_cuca = true
-	- kinotos al whisky
-		cucaracha: sos un degenerado pero te respeto.
-		set GameGlobals.le_caes_bien_a_la_cuca = false
-	- (no escuchaste nada de lo que te dijo) => start
-	- salir => END
-	morpho: ...
-else:
-	if GameGlobals.le_caes_bien_a_la_cuca:
-		cucaracha: nos vemos campeon 
-		=> END
-	else:
-		cucaracha: sali de aca guachin 
-		=> END
-
-=> END
+	cucaracha: [wave]una oruga?..[/wave].[wait=0.5]
+	cucaracha: me acaba de despertar un golpe muy fuerte y vi que hay un agujero en el techo ¿pudiste ver quien fue? [wait=0.5]
+	Morpho: ...
+	Cucaracha: asumo que fuiste vos con tu capsula. 
+	Morpho: ...
+	Cucaracha: debes ser uno de los experimentos del laboratorio...
+	Cucaracha: muchos de los tuyos terminan en esta cueva, ya sea porque se escapan o simplemente son desechados.
+	Cucaracha: no se como terminaste en esta cueva pero si queres irte, tenes que seguir el camino a mi derecha. 
+	Cucaracha: igual no creo que llegues muy lejos jeje.
+	Cucaracha: [wait=0.5] no te quiero ofender pero...[wait=0.5] sos una oruga.
+	Cucaracha: y mucho no vas a poder hacer en tu forma actual. O sea, sos un inútil jeje.
+	Cucaracha: pero no te preocupes, aprendí muchas cosas observando a los insectos que salen del laboratorio.
+	Cucaracha: PUEDEN CONSEGUIR HABILIDADES ESPECIALES. Que loco ¿no? 
+	Cucaracha: solo tenes que comer los huevos que veas en el camino.
+	Cucaracha:  ya se que puede parecer asqueroso, pero es como comer chocolate.
+	Cucaracha: A mi derecha deje un huevo de saltamontes. Lo iba a comer pero te lo regalo porque me caíste bien. 
+	Cucaracha: Ah y otra cosa.
+	Cucaracha: No soy un experto en las habilidades especiales, pero comiendo un huevo de saltamontes estoy 99% seguro de que vas a poder saltar esa pared. 
+	Cucaracha: Mucha suerte oruguita. 
+~ END
 

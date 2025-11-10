@@ -14,7 +14,7 @@ func _ready():
 
 
 func _process(_delta: float):
-	if is_player_close and Input.is_action_just_pressed("ui_accept"):
+	if is_player_close and Input.is_action_just_pressed("interactuar"):
 		DialogueManager.show_dialogue_balloon(MY_DIALOGUE, "start")
 
 
