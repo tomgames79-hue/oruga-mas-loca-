@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="1_oid7m"]
 [ext_resource type="Script" uid="uid://bwqld3bxl273v" path="res://script/camera_2d_2.gd" id="2_l1tm0"]
 [ext_resource type="PackedScene" uid="uid://dy8taq07dthqn" path="res://escenas/npc.tscn" id="3_c4gf3"]
-[ext_resource type="Texture2D" uid="uid://b0lxjujlhqt25" path="res://assets/Default/tile_blockDoor.png" id="7_p87n4"]
 [ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="11_3kw3a"]
 [ext_resource type="Texture2D" uid="uid://dpsk0lygerjs3" path="res://assets/Default/tile_chest.png" id="11_c4gf3"]
 [ext_resource type="PackedScene" uid="uid://s1qgq0iynddt" path="res://escenas/enemy.tscn" id="13_c4gf3"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="15_qdcmx"]
 [ext_resource type="Texture2D" uid="uid://b5pwv5t27co28" path="res://assets/morpho/[a,d] caminar.png" id="16_nvnos"]
 [ext_resource type="Texture2D" uid="uid://bkad1luavotte" path="res://assets/morpho/[w] saltar.png" id="17_j7n1y"]
+[ext_resource type="Texture2D" uid="uid://di45jhuybs01s" path="res://assets/morpho/puerta.png" id="17_nvnos"]
 
 [sub_resource type="Gradient" id="Gradient_nvnos"]
 offsets = PackedFloat32Array(0, 0.721839, 0.83908, 1)
@@ -58,7 +58,7 @@ gradient = SubResource("Gradient_c4gf3")
 fill_from = Vector2(0.573529, 0.452206)
 fill_to = Vector2(0.580882, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4gf3"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nvnos"]
 texture = ExtResource("1_0w2mo")
 1:1/0 = 0
 2:1/0 = 0
@@ -198,7 +198,7 @@ texture = ExtResource("1_0w2mo")
 [sub_resource type="TileSet" id="TileSet_3kw3a"]
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 37
-sources/1 = SubResource("TileSetAtlasSource_c4gf3")
+sources/1 = SubResource("TileSetAtlasSource_nvnos")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3kw3a"]
 radius = 36.3456
@@ -286,7 +286,7 @@ tile_map_data = PackedByteArray("AAAcAIYAAAADAAIAAAAsAK//AQACAAYAAAAsALD/AQACAAY
 tile_set = SubResource("TileSet_3kw3a")
 
 [node name="Player" parent="." instance=ExtResource("1_oid7m")]
-position = Vector2(-60, 921)
+position = Vector2(-60.1, 921)
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("ground")]
 position = Vector2(1, 0)
@@ -305,10 +305,6 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/AreaDetector"]
 shape = SubResource("CircleShape2D_3kw3a")
-
-[node name="TileBlockDoor" type="Sprite2D" parent="."]
-position = Vector2(4849, -1495)
-texture = ExtResource("7_p87n4")
 
 [node name="TileChest" type="Sprite2D" parent="."]
 position = Vector2(786, -1332)
@@ -389,5 +385,9 @@ texture = ExtResource("16_nvnos")
 position = Vector2(880, 998)
 scale = Vector2(0.428, 0.344)
 texture = ExtResource("17_j7n1y")
+
+[node name="puerta png" type="Sprite2D" parent="."]
+position = Vector2(4830, -1454)
+texture = ExtResource("17_nvnos")
 
 [connection signal="body_entered" from="PuntoDeGuardado" to="PuntoDeGuardado" method="_on_body_entered"]
