@@ -40,7 +40,8 @@ var disparo_adquirido := false
 
 
 func _ready() -> void:
-	global_position = GameGlobals.player_position
+	if GameGlobals.player_position: 
+		global_position = GameGlobals.player_position 
 	$"../GUI".actualizar_vida(health)
 	$hit_box/CollisionShape2D.disabled = true
 	$Sprite2D/SpriteBrazo.hide()

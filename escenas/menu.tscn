@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwwfcnda11skg"]
 
 [ext_resource type="Script" uid="uid://ruaqf387d4wr" path="res://script/menu.gd" id="1_d7r87"]
-[ext_resource type="Texture2D" uid="uid://dyev82xojxl6k" path="res://assets/images.jpg" id="2_2owot"]
+[ext_resource type="Texture2D" uid="uid://4a46a4di0hk" path="res://assets/morpho/MorphoMenu.jpg" id="2_d7r87"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -17,6 +17,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -386.0
+offset_top = -213.0
+offset_right = 383.0
+offset_bottom = 226.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.162066, 0.162066, 0.162066, 1)
@@ -26,9 +30,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -378.0
+offset_top = -235.0
+offset_right = 390.0
+offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_2owot")
+texture = ExtResource("2_d7r87")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -37,10 +45,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -291.0
-offset_top = -235.0
-offset_right = 291.0
-offset_bottom = 235.0
+offset_left = -279.0
+offset_top = -78.0
+offset_right = 303.0
+offset_bottom = 392.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 41

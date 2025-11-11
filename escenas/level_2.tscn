@@ -167,8 +167,12 @@ tile_set = SubResource("TileSet_nvrge")
 
 [node name="Player" parent="." instance=ExtResource("2_xjtvu")]
 position = Vector2(317, 0)
+jump_egg = true
+attack_egg = true
+shoot_egg = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.5, 0.5)
 
 [node name="GUI" parent="." instance=ExtResource("3_i6cw0")]
 scale = Vector2(2, 2)

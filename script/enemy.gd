@@ -33,6 +33,8 @@ func _physics_process(delta: float) -> void:
 func detectar():
 	if $right.is_colliding():
 		var obj = $right.get_collider()
+		if not obj:
+			return
 		if obj.is_in_group("player"):
 			follow = true
 			velocity.x = -follow_speed
