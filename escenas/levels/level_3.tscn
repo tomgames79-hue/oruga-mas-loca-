@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=4 uid="uid://bl00c6ptvsrol"]
 
-[ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_tx4cn"]
-[ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_xjtvu"]
-[ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="3_i6cw0"]
+[ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_ygmic"]
+[ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_kj36u"]
+[ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="3_b4x0n"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xjtvu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6cw0"]
-texture = ExtResource("1_tx4cn")
+texture = ExtResource("1_ygmic")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -148,7 +148,7 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 37
 sources/1 = SubResource("TileSetAtlasSource_i6cw0")
 
-[node name="Level2" type="Node2D"]
+[node name="Level_3" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.456282, 0.139685, 0.178731, 1)
@@ -165,15 +165,15 @@ tile_set = SubResource("TileSet_nvrge")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("2_xjtvu")]
+[node name="Player" parent="." instance=ExtResource("2_kj36u")]
 position = Vector2(317, 0)
 jump_egg = true
 attack_egg = true
 shoot_egg = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.7, 0.7)
 
-[node name="GUI" parent="." instance=ExtResource("3_i6cw0")]
+[node name="GUI" parent="." instance=ExtResource("3_b4x0n")]
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
