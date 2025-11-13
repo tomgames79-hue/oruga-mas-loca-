@@ -7,5 +7,5 @@ var player_position = null
 
 # Escenas
 const LEVEL_1 = preload("res://escenas/levels/level_1.tscn")
-const LEVEL_2 = preload("res://escenas/levels/level_2.tscn")
+const LEVEL_2 = preload("res://escenas/levels/level_2 copy.tscn")
 const LEVEL_3 = preload("res://escenas/levels/level_3.tscn")
