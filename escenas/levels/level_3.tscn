@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=4 uid="uid://bl00c6ptvsrol"]
+[gd_scene load_steps=7 format=4 uid="uid://bl00c6ptvsrol"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_ygmic"]
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_kj36u"]
 [ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="3_b4x0n"]
-[ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="4_kj36u"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xjtvu"]
 
@@ -178,8 +177,3 @@ zoom = Vector2(0.7, 0.7)
 [node name="GUI" parent="." instance=ExtResource("3_b4x0n")]
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
-
-[node name="Puerta" parent="." instance=ExtResource("4_kj36u")]
-modulate = Color(1, 0.294118, 0.278431, 1)
-position = Vector2(1217, 716)
-nivel_objetivo_path = "uid://bl00c6ptvsrol"

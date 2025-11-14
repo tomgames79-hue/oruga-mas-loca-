@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://boaoyfsd5dqp4"]
+
+[ext_resource type="Script" uid="uid://vf2jcwj0ymli" path="res://script/pared_debil.gd" id="1_jtthy"]
+[ext_resource type="Texture2D" uid="uid://b31fnpverkvne" path="res://assets/morpho/pared debil.png" id="1_sisvx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sisvx"]
+size = Vector2(74, 504.184)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtthy"]
+size = Vector2(74, 242)
+
+[node name="ParedDebil" type="StaticBody2D"]
+collision_layer = 64
+collision_mask = 3
+script = ExtResource("1_jtthy")
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.478)
+texture = ExtResource("1_sisvx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+scale = Vector2(1, 0.478)
+shape = SubResource("RectangleShape2D_sisvx")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_jtthy")
+debug_color = Color(0.742167, 0.250698, 0.959231, 0.42)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

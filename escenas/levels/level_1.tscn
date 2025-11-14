@@ -311,8 +311,7 @@ offset_bottom = 1136.0
 texture = SubResource("GradientTexture2D_3kw3a")
 
 [node name="Puerta" parent="." instance=ExtResource("17_v0txx")]
-modulate = Color(1, 0.294118, 0.278431, 1)
-position = Vector2(211, 939)
+position = Vector2(4707, -1452)
 nivel_objetivo_path = "uid://fnneopskw56g"
 
 [node name="ground" type="TileMapLayer" parent="." groups=["ground"]]

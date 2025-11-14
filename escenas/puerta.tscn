@@ -11,11 +11,11 @@ collision_layer = 64
 script = ExtResource("1_r5d6k")
 nivel_objetivo_path = "uid://dqy7uli73m3ya"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r5d6k")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(19, -65.25)
 shape = SubResource("RectangleShape2D_5jsmn")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_r5d6k")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
