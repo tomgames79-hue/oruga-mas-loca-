@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_ymgbi"]
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_t6yyq"]
 [ext_resource type="Script" uid="uid://bwqld3bxl273v" path="res://script/camera_2d_2.gd" id="3_uo3qe"]
-[ext_resource type="Texture2D" uid="uid://dpsk0lygerjs3" path="res://assets/Default/tile_chest.png" id="4_sa213"]
 [ext_resource type="PackedScene" uid="uid://s1qgq0iynddt" path="res://escenas/enemy.tscn" id="5_hvt5r"]
 [ext_resource type="PackedScene" uid="uid://dy8taq07dthqn" path="res://escenas/npc.tscn" id="6_eqi3u"]
 [ext_resource type="PackedScene" uid="uid://fotdiihjti0d" path="res://escenas/killzone.tscn" id="7_x3s20"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c26x3akaleiaj" path="res://assets/morpho/[c] disparar.png" id="13_k3yc2"]
 [ext_resource type="Texture2D" uid="uid://b5pwv5t27co28" path="res://assets/morpho/[a,d] caminar.png" id="14_0r7p1"]
 [ext_resource type="Texture2D" uid="uid://bkad1luavotte" path="res://assets/morpho/[w] saltar.png" id="15_5royd"]
+[ext_resource type="Texture2D" uid="uid://bu321s4ufrosv" path="res://assets/morpho/foto de notas 1.png" id="16_o7sfa"]
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="17_v0txx"]
 
 [sub_resource type="Gradient" id="Gradient_nvnos"]
@@ -340,10 +340,6 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/AreaDetector"]
 shape = SubResource("CircleShape2D_3kw3a")
 
-[node name="TileChest" type="Sprite2D" parent="."]
-position = Vector2(786, -1332)
-texture = ExtResource("4_sa213")
-
 [node name="Enemy" parent="." instance=ExtResource("5_hvt5r")]
 position = Vector2(1890, -2127)
 
@@ -416,5 +412,10 @@ texture = ExtResource("14_0r7p1")
 position = Vector2(880, 998)
 scale = Vector2(0.428, 0.344)
 texture = ExtResource("15_5royd")
+
+[node name="FotoDeNotas1" type="Sprite2D" parent="."]
+position = Vector2(791, -1331)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("16_o7sfa")
 
 [connection signal="body_entered" from="PuntoDeGuardado" to="PuntoDeGuardado" method="_on_body_entered"]

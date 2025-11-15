@@ -1,7 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://boaoyfsd5dqp4"]
+[gd_scene load_steps=8 format=3 uid="uid://boaoyfsd5dqp4"]
 
 [ext_resource type="Script" uid="uid://vf2jcwj0ymli" path="res://script/pared_debil.gd" id="1_jtthy"]
 [ext_resource type="Texture2D" uid="uid://b31fnpverkvne" path="res://assets/morpho/pared debil.png" id="1_sisvx"]
+
+[sub_resource type="Animation" id="Animation_jtthy"]
+resource_name = "pared"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D/Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.49, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0860895, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_852pp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D/Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t8tun"]
+_data = {
+&"RESET": SubResource("Animation_852pp"),
+&"pared": SubResource("Animation_jtthy")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sisvx"]
 size = Vector2(74, 504.184)
@@ -14,9 +51,18 @@ collision_layer = 64
 collision_mask = 3
 script = ExtResource("1_jtthy")
 
-[node name="sprite" type="Sprite2D" parent="."]
-scale = Vector2(1, 0.478)
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(2.00001, 0)
+scale = Vector2(0.42, 0.484)
 texture = ExtResource("1_sisvx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D/Sprite2D"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_t8tun")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)

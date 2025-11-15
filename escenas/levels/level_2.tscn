@@ -195,7 +195,7 @@ offset_bottom = -137.0
 texture = SubResource("GradientTexture2D_8o8it")
 
 [node name="ParedDebil" parent="." instance=ExtResource("7_jj1x1")]
-position = Vector2(1063, -5403)
+position = Vector2(1088, -5408)
 
 [node name="ParedDebil2" parent="." instance=ExtResource("7_jj1x1")]
 position = Vector2(457, -389.5)
