@@ -242,7 +242,7 @@ radius = 36.3456
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_38jo4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4gf3"]
-size = Vector2(93, 148)
+size = Vector2(134, 338)
 
 [node name="Level1" type="Node2D"]
 
@@ -387,7 +387,7 @@ collision_layer = 0
 script = ExtResource("10_3ycpq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuntoDeGuardado"]
-position = Vector2(36.5, 64)
+position = Vector2(-989, -1986)
 shape = SubResource("RectangleShape2D_c4gf3")
 
 [node name="CapsulaDeMorpho" type="Sprite2D" parent="."]

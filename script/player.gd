@@ -31,10 +31,7 @@ var facing_right = true
 @export var attack_egg = false
 @export var shoot_egg = false
 const bullet = preload("res://escenas/bullet.tscn")
-var ataque_adquirido := false
-var doble_salto_adquirido := false
-var dash_adquirido := false
-var disparo_adquirido := false
+
 
 @onready var state_machine: StateMachine = $StateMachine
 

@@ -3,12 +3,18 @@
 [ext_resource type="Script" uid="uid://vf2jcwj0ymli" path="res://script/pared_debil.gd" id="1_jtthy"]
 [ext_resource type="Texture2D" uid="uid://b31fnpverkvne" path="res://assets/morpho/pared debil.png" id="1_sisvx"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sisvx"]
+size = Vector2(74, 504.184)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtthy"]
+size = Vector2(74, 242)
+
 [sub_resource type="Animation" id="Animation_852pp"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody2D/Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +30,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody2D/Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -40,36 +46,22 @@ _data = {
 &"pared": SubResource("Animation_jtthy")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sisvx"]
-size = Vector2(74, 504.184)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtthy"]
-size = Vector2(74, 242)
-
-[node name="ParedDebil" type="StaticBody2D"]
+[node name="ParedDebil" type="StaticBody2D" groups=["ground"]]
 collision_layer = 64
 collision_mask = 3
 script = ExtResource("1_jtthy")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.00001, 0)
 scale = Vector2(0.42, 0.484)
 texture = ExtResource("1_sisvx")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D/Sprite2D"]
-root_node = NodePath("../../..")
-libraries = {
-&"": SubResource("AnimationLibrary_t8tun")
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
 scale = Vector2(1, 0.478)
 shape = SubResource("RectangleShape2D_sisvx")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["ground"]]
 collision_layer = 64
 collision_mask = 40
 
@@ -77,5 +69,11 @@ collision_mask = 40
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_jtthy")
 debug_color = Color(0.742167, 0.250698, 0.959231, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_t8tun")
+}
+autoplay = "pared"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

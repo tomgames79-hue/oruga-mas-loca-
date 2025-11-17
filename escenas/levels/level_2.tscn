@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://fnneopskw56g"]
+[gd_scene load_steps=17 format=4 uid="uid://fnneopskw56g"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_5x6d8"]
 [ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="2_jj1x1"]
@@ -8,29 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://fotdiihjti0d" path="res://escenas/killzone.tscn" id="7_ex27e"]
 [ext_resource type="PackedScene" uid="uid://boaoyfsd5dqp4" path="res://escenas/pared_debil.tscn" id="7_jj1x1"]
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="8_k3opc"]
-[ext_resource type="PackedScene" uid="uid://jcobk4i6e1xj" path="res://escenas/enemyshooter.tscn" id="9_jj1x1"]
 
-[sub_resource type="Gradient" id="Gradient_jj1x1"]
-colors = PackedColorArray(0.54, 0.1026, 0.1026, 1, 1, 1, 1, 1)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jj1x1"]
+seed = 3
+frequency = 0.0015
+offset = Vector3(142.86, 187.46, 0)
+fractal_weighted_strength = 0.42
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_grqsf"]
-noise_type = 0
-seed = -15
-frequency = 0.172
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0p5dh"]
-width = 20000
-height = 20000
-color_ramp = SubResource("Gradient_jj1x1")
-noise = SubResource("FastNoiseLite_grqsf")
-
-[sub_resource type="Gradient" id="Gradient_tdq6j"]
-offsets = PackedFloat32Array(0.730435)
-colors = PackedColorArray(0.626657, 0.881135, 0.65409, 0.152941)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_grqsf"]
-gradient = SubResource("Gradient_tdq6j")
-fill_from = Vector2(0.259259, 0.725309)
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_grqsf"]
+noise = SubResource("FastNoiseLite_jj1x1")
 
 [sub_resource type="Gradient" id="Gradient_c4gf3"]
 colors = PackedColorArray(1, 1, 1, 0.235294, 1, 1, 1, 0)
@@ -189,21 +175,13 @@ radius = 36.3456
 
 [node name="Level_2" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 2.0
-offset_top = -6599.0
-offset_right = 50292.0
-offset_bottom = 57911.0
-scale = Vector2(0.1, 0.1)
-texture = SubResource("NoiseTexture2D_0p5dh")
-
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(1, 0.635294, 1, 1)
 offset_left = -117.0
 offset_top = -6614.0
 offset_right = 5082.0
 offset_bottom = -11.0
-texture = SubResource("GradientTexture2D_grqsf")
+texture = SubResource("NoiseTexture2D_grqsf")
 
 [node name="Puerta" parent="." instance=ExtResource("8_k3opc")]
 position = Vector2(4294, -4857)
@@ -278,12 +256,18 @@ shape = SubResource("CircleShape2D_l1fr2")
 [node name="Enemy" parent="." instance=ExtResource("5_0l803")]
 position = Vector2(1846, -5315)
 
+[node name="Enemy2" parent="." instance=ExtResource("5_0l803")]
+position = Vector2(3045, -5313)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_0l803")]
+position = Vector2(4123, -5311)
+
+[node name="Enemy4" parent="." instance=ExtResource("5_0l803")]
+position = Vector2(2036, -5954)
+
 [node name="Killzone" parent="." instance=ExtResource("7_ex27e")]
 position = Vector2(350, -61)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1396, 1111)
 shape = SubResource("WorldBoundaryShape2D_hfhgc")
-
-[node name="EnemyShooter" parent="." instance=ExtResource("9_jj1x1")]
-position = Vector2(4123, -5875)
