@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ccug844ut0nao"
+path="res://.godot/imported/nota 2.dialogue-92a98d7effffa034d1c44755e8c7101d.tres"
+
+[deps]
+
+source_file="res://dialogues/nota 2.dialogue"
+dest_files=["res://.godot/imported/nota 2.dialogue-92a98d7effffa034d1c44755e8c7101d.tres"]
+
+[params]
+
+defaults=true

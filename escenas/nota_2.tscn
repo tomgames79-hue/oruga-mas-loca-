@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhsgxy5ips71n"]
+
+[ext_resource type="Script" uid="uid://bl2kyohgupo7i" path="res://escenas/nota_2.gd" id="1_4ajmq"]
+[ext_resource type="Texture2D" uid="uid://dow0td2c50a4j" path="res://assets/morpho/foto de notas 2.png" id="2_4ajmq"]
+[ext_resource type="Texture2D" uid="uid://bqmbgyilmnf0c" path="res://assets/morpho/[e] (1).png" id="3_mpo0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50qer"]
+size = Vector2(120, 140)
+
+[node name="Nota2" type="Area2D"]
+position = Vector2(10, 0)
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_4ajmq")
+
+[node name="FotoDeNotas2" type="Sprite2D" parent="."]
+position = Vector2(40, 57.5)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_4ajmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50, 68)
+shape = SubResource("RectangleShape2D_50qer")
+
+[node name="ExclamationMark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(47.5, -57.5)
+scale = Vector2(0.372, 0.333)
+texture = ExtResource("3_mpo0a")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

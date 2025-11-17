@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dmqbysuslhk2x"]
+[gd_scene load_steps=30 format=4 uid="uid://dmqbysuslhk2x"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_ymgbi"]
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_t6yyq"]
@@ -14,14 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://c26x3akaleiaj" path="res://assets/morpho/[c] disparar.png" id="13_k3yc2"]
 [ext_resource type="Texture2D" uid="uid://b5pwv5t27co28" path="res://assets/morpho/[a,d] caminar.png" id="14_0r7p1"]
 [ext_resource type="Texture2D" uid="uid://bkad1luavotte" path="res://assets/morpho/[w] saltar.png" id="15_5royd"]
-[ext_resource type="Texture2D" uid="uid://bu321s4ufrosv" path="res://assets/morpho/foto de notas 1.png" id="16_o7sfa"]
+[ext_resource type="PackedScene" uid="uid://dl2uiw5ixnxb2" path="res://escenas/nota.tscn" id="16_o7sfa"]
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="17_v0txx"]
+[ext_resource type="PackedScene" uid="uid://dhsgxy5ips71n" path="res://escenas/nota_2.tscn" id="17_ymgbi"]
 
-[sub_resource type="Gradient" id="Gradient_nvnos"]
+[sub_resource type="Gradient" id="Gradient_ymgbi"]
 offsets = PackedFloat32Array(0, 0.721839, 0.83908, 1)
 colors = PackedColorArray(0.219608, 0.121569, 0.305882, 0, 0.513726, 0.360784, 0.282353, 1, 0.432531, 0.294544, 0.304211, 1, 0.176471, 0.101961, 0, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_j7n1y"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t6yyq"]
 noise_type = 2
 seed = 9
 frequency = 0.043
@@ -39,15 +40,15 @@ domain_warp_fractal_octaves = 1
 domain_warp_fractal_lacunarity = 8.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tl0bj"]
-color_ramp = SubResource("Gradient_nvnos")
-noise = SubResource("FastNoiseLite_j7n1y")
+color_ramp = SubResource("Gradient_ymgbi")
+noise = SubResource("FastNoiseLite_t6yyq")
 
-[sub_resource type="Gradient" id="Gradient_tdq6j"]
+[sub_resource type="Gradient" id="Gradient_uo3qe"]
 offsets = PackedFloat32Array(0, 0.170115, 0.382609, 0.42268, 0.573913, 0.730435)
 colors = PackedColorArray(0.121653, 0.0217094, 0, 0.321569, 0.482559, 0.345203, 0.291666, 0.145098, 0.47194, 0.468475, 0.224522, 0.364706, 0.408851, 0.629057, 0.284918, 0.261115, 0.682353, 1, 0.0823529, 0.152941, 0.145098, 0.913725, 0.227451, 0.152941)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_yaa57"]
-gradient = SubResource("Gradient_tdq6j")
+gradient = SubResource("Gradient_uo3qe")
 fill_from = Vector2(1, 0.410345)
 
 [sub_resource type="Gradient" id="Gradient_j7n1y"]
@@ -413,9 +414,10 @@ position = Vector2(880, 998)
 scale = Vector2(0.428, 0.344)
 texture = ExtResource("15_5royd")
 
-[node name="FotoDeNotas1" type="Sprite2D" parent="."]
-position = Vector2(791, -1331)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("16_o7sfa")
+[node name="Nota1" parent="." instance=ExtResource("16_o7sfa")]
+position = Vector2(778, -1356)
+
+[node name="Nota2" parent="." instance=ExtResource("17_ymgbi")]
+position = Vector2(4840, -2974)
 
 [connection signal="body_entered" from="PuntoDeGuardado" to="PuntoDeGuardado" method="_on_body_entered"]

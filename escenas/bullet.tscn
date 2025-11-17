@@ -54,8 +54,9 @@ shape = SubResource("CapsuleShape2D_blkrf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.737255, 0.890196, 0.0823529, 0.937255)
+position = Vector2(5.25, 0)
+scale = Vector2(1.01282, 1)
 sprite_frames = SubResource("SpriteFrames_bnlhc")
-frame_progress = 0.12773
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.026
