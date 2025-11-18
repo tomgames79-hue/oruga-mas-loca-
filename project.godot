@@ -43,6 +43,11 @@ folder_colors={
 "res://script/": "green"
 }
 
+[global_group]
+
+enemy=""
+ground=""
+
 [input]
 
 jump={
