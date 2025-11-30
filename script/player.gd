@@ -74,7 +74,7 @@ func flip():
 
 func _on_hard_box_area_entered(area: Area2D) -> void:
 	#print(jump_egg, area.jump)
-	if area.is_in_group("enemy"):
+	if area.is_in_group("enemy") or area.is_in_group("bullet_enemy"):
 		print("perdiste vida")
 		health -= 1
 		update_life()

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const bullet = preload("res://escenas/bullet.tscn")
+const bullet = preload("res://escenas/bullet_enemy.tscn")
 @onready var attack_cooldown: Timer = $AttackCooldown
 var facing_right = true
 var jugador = null
@@ -16,8 +16,8 @@ func _process(delta: float) -> void:
 	else:
 		facing_right = false
 		sprite_2d.flip_h = true
-	#if health < 0:
-		#queue_free()
+	if health < 0:
+		queue_free()
 
 func disparo():
 	#if Input.is_action_just_pressed("shoot"):
@@ -44,6 +44,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	pass
-	#if area.is_in_group("attack") or area.is_in_group("bullet"):
-		#print("asasa")
-		#health -= 1
+	if area.is_in_group("attack") or area.is_in_group("bullet"):
+		print("asasa")
+		health -= 1

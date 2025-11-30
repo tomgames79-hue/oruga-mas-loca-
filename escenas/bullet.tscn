@@ -1,34 +1,30 @@
 [gd_scene load_steps=9 format=3 uid="uid://b4cn7wpra0n2e"]
 
-[ext_resource type="Texture2D" uid="uid://csq4er2aa10gw" path="res://assets/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_05.png" id="1_1dqwh"]
 [ext_resource type="Script" uid="uid://bnog30yhh306x" path="res://script/bullet.gd" id="1_blkrf"]
+[ext_resource type="Texture2D" uid="uid://cm16whtmqnd8p" path="res://assets/New_All_Fire_Bullet_Pixel_16x16/All_Fire_Bullet_Pixel_16x16_03.png" id="2_blkrf"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_blkrf"]
-radius = 4.00312
-height = 17.9999
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mbwb3"]
-atlas = ExtResource("1_1dqwh")
-region = Rect2(180, 63, 15, 21)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mbwb3"]
+radius = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlb16"]
-atlas = ExtResource("1_1dqwh")
-region = Rect2(195, 63, 15, 21)
+atlas = ExtResource("2_blkrf")
+region = Rect2(496, 160, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ya8pc"]
-atlas = ExtResource("1_1dqwh")
-region = Rect2(210, 63, 15, 21)
+atlas = ExtResource("2_blkrf")
+region = Rect2(512, 160, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7qt2u"]
-atlas = ExtResource("1_1dqwh")
-region = Rect2(225, 63, 15, 21)
+atlas = ExtResource("2_blkrf")
+region = Rect2(528, 160, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnlhc"]
+atlas = ExtResource("2_blkrf")
+region = Rect2(544, 160, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bnlhc"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mbwb3")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nlb16")
 }, {
@@ -37,6 +33,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7qt2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnlhc")
 }],
 "loop": true,
 "name": &"default",
@@ -44,19 +43,20 @@ animations = [{
 }]
 
 [node name="Bullet" type="Area2D" groups=["bullet"]]
+texture_filter = 2
 collision_layer = 32
 collision_mask = 38
 script = ExtResource("1_blkrf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.57394
-shape = SubResource("CapsuleShape2D_blkrf")
+shape = SubResource("CircleShape2D_mbwb3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.737255, 0.890196, 0.0823529, 0.937255)
-position = Vector2(5.25, 0)
-scale = Vector2(1.01282, 1)
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(1.61579, 1.4375)
 sprite_frames = SubResource("SpriteFrames_bnlhc")
+frame_progress = 0.406574
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.026

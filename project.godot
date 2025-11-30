@@ -47,6 +47,7 @@ folder_colors={
 
 enemy=""
 ground=""
+bullet_enemy=""
 
 [input]
 
@@ -108,3 +109,4 @@ locale/translations_pot_files=PackedStringArray("res://dialogues/my_dialogue.dia
 2d_physics/layer_5="dialogue"
 2d_physics/layer_6="bullet"
 2d_physics/layer_7="event"
+2d_physics/layer_8="bullet_enemy"
