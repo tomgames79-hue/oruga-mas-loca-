@@ -315,6 +315,7 @@ speed = 500.0
 nombre = "falling"
 
 [node name="player_attack" parent="StateMachine" index="4"]
+speed = 20.0
 nombre = "attack"
 
 [node name="StateLabel" type="Label" parent="."]
