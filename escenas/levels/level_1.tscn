@@ -3088,9 +3088,9 @@ offset_bottom = -1942.0
 texture = SubResource("NoiseTexture2D_tl0bj")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = -1539.0
+offset_left = -1523.0
 offset_top = -1942.0
-offset_right = 6530.0
+offset_right = 6546.0
 offset_bottom = 3338.0
 scale = Vector2(0.995918, -0.984327)
 texture = SubResource("GradientTexture2D_yaa57")
@@ -3104,7 +3104,7 @@ texture = SubResource("NoiseTexture2D_tl0bj")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(1, 0.635294, 1, 1)
-offset_left = -1827.0
+offset_left = -1551.0
 offset_top = -1943.0
 offset_right = 6548.0
 offset_bottom = 1443.0
@@ -3119,7 +3119,6 @@ offset_bottom = 1136.0
 texture = SubResource("GradientTexture2D_3kw3a")
 
 [node name="TextureRect8" type="TextureRect" parent="."]
-visible = false
 modulate = Color(0.964706, 0.862745, 0.996078, 0.545098)
 self_modulate = Color(0.568627, 0.568627, 0.568627, 0.239216)
 texture_filter = 1
@@ -3288,20 +3287,20 @@ position = Vector2(4840, -2974)
 
 [node name="Square-Black" type="Sprite2D" parent="."]
 z_index = 12
-position = Vector2(120.5, 1019.75)
-scale = Vector2(25.0156, 3.58594)
+position = Vector2(123, 1229.5)
+scale = Vector2(25.0937, 10.1406)
 texture = SubResource("GradientTexture2D_eqi3u")
 
 [node name="Square-Black2" type="Sprite2D" parent="."]
 z_index = 12
-position = Vector2(1273.5, 1046)
-scale = Vector2(4.64063, 3.58594)
+position = Vector2(1272.5, 1256.63)
+scale = Vector2(4.67188, 10.168)
 texture = SubResource("GradientTexture2D_eqi3u")
 
 [node name="Square-Black3" type="Sprite2D" parent="."]
 z_index = 12
-position = Vector2(1736.75, 1048)
-scale = Vector2(4.67969, 3.58594)
+position = Vector2(1736.75, 1257.13)
+scale = Vector2(4.67969, 10.1211)
 texture = SubResource("GradientTexture2D_eqi3u")
 
 [node name="Square-Black4" type="Sprite2D" parent="."]
@@ -3310,17 +3309,11 @@ position = Vector2(3406.5, 1291.13)
 scale = Vector2(26.4531, 10.1523)
 texture = SubResource("GradientTexture2D_eqi3u")
 
-[node name="Square-Black5" type="Sprite2D" parent="."]
-z_index = 12
-position = Vector2(2136.25, -1809.37)
-scale = Vector2(68.4297, 8.79297)
-texture = SubResource("GradientTexture2D_eqi3u")
-
 [node name="Square-Black6" type="Sprite2D" parent="."]
 z_index = 12
-position = Vector2(4404.85, -225)
+position = Vector2(4382.88, -178.054)
 rotation = -1.5708
-scale = Vector2(39.2204, 3.51451)
+scale = Vector2(37.7533, 4.20104)
 texture = SubResource("GradientTexture2D_eqi3u")
 
 [node name="Square-Black7" type="Sprite2D" parent="."]
