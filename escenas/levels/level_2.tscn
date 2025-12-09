@@ -3377,23 +3377,18 @@ position = Vector2(1396, 1111)
 shape = SubResource("WorldBoundaryShape2D_hfhgc")
 
 [node name="EnemyShooter" parent="." instance=ExtResource("9_jj1x1")]
-visible = false
 position = Vector2(4096, -5898)
 
 [node name="EnemyShooter2" parent="." instance=ExtResource("9_jj1x1")]
-visible = false
 position = Vector2(4077, -4916)
 
 [node name="EnemyShooter3" parent="." instance=ExtResource("9_jj1x1")]
-visible = false
 position = Vector2(279, -3356)
 
 [node name="EnemyShooter4" parent="." instance=ExtResource("9_jj1x1")]
-visible = false
 position = Vector2(2155, -668)
 
 [node name="EnemyShooter5" parent="." instance=ExtResource("9_jj1x1")]
-visible = false
 position = Vector2(1736, -666)
 
 [node name="piedras3" type="TileMapLayer" parent="."]
