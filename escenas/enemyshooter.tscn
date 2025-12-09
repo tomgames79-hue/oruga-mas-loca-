@@ -8,7 +8,7 @@ radius = 19.5
 height = 58.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3iyc"]
-radius = 581.021
+radius = 3038.35
 
 [sub_resource type="Animation" id="Animation_iwvj6"]
 resource_name = "idle"

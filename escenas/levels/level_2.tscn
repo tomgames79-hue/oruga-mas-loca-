@@ -1480,7 +1480,6 @@ texture_region_size = Vector2i(64, 64)
 23:1/0 = 0
 23:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(17.5, -0.5, 32, 6.5, 32, 32, -32, 32, -32, 1.5)
 24:1/0 = 0
-24:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 4.5, -23.5, 8.5, -19.5, 32, -32, 32)
 26:1/0 = 0
 27:1/0 = 0
 27:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, 11.5, -17.5, -4.5, -5.5, -22.5)
@@ -1528,7 +1527,6 @@ texture_region_size = Vector2i(64, 64)
 23:2/0 = 0
 23:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 24:2/0 = 0
-24:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -20.5, -32, -17.5, 1.5, -20.5, 20.5, -32, 32, -32, 32)
 26:2/0 = 0
 27:2/0 = 0
 27:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, -32)
@@ -1565,7 +1563,6 @@ texture_region_size = Vector2i(64, 64)
 23:3/0 = 0
 23:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 24:3/0 = 0
-24:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -19.5, -7.5, -12.5, 13.5, -12.5, 32, -32, 32, -32, 32)
 26:3/0 = 0
 27:3/0 = 0
 27:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -20.5, -18.5, -32, 1.5, -32, 32, 32, 32, 32, -32)
@@ -1602,7 +1599,6 @@ texture_region_size = Vector2i(64, 64)
 23:4/0 = 0
 23:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 24:4/0 = 0
-24:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -12.5, -32, -23.5, 1.5, -12.5, 32, -32, 32, -32, 32)
 26:4/0 = 0
 27:4/0 = 0
 27:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -19.5, -18.5, 3.5, -32, 32, 32, 32, 32, -32)
@@ -1651,7 +1647,6 @@ texture_region_size = Vector2i(64, 64)
 23:5/0 = 0
 23:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 24:5/0 = 0
-24:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -14.5, -32, -18.5, 32, -32, 32, -32, 32)
 26:5/0 = 0
 27:5/0 = 0
 27:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, -19.5, -22.5, 32, 32, 32, 32, -32)
@@ -1698,9 +1693,8 @@ texture_region_size = Vector2i(64, 64)
 22:6/0 = 0
 22:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 16.5, 20.5, 21.5, 5.5, 15.5, -12.5, 20.5, -32, 16.5)
 23:6/0 = 0
-23:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+23:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 16.5, 14.5, 5.5, 32, -11.5, 32, -32, -32, -32)
 24:6/0 = 0
-24:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -14.5, -32, -32, -9.5)
 27:6/0 = 0
 27:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.5, -32, -3.5, -16.5, 32, -19.5, 32, -32)
 28:6/0 = 0
@@ -3293,6 +3287,7 @@ texture = SubResource("GradientTexture2D_ex27e")
 
 [node name="Puerta" parent="." instance=ExtResource("8_k3opc")]
 position = Vector2(4294, -4857)
+nivel_objetivo_path = "uid://bl00c6ptvsrol"
 
 [node name="TextureRect6" type="TextureRect" parent="."]
 texture_filter = 1
@@ -3382,18 +3377,23 @@ position = Vector2(1396, 1111)
 shape = SubResource("WorldBoundaryShape2D_hfhgc")
 
 [node name="EnemyShooter" parent="." instance=ExtResource("9_jj1x1")]
+visible = false
 position = Vector2(4096, -5898)
 
 [node name="EnemyShooter2" parent="." instance=ExtResource("9_jj1x1")]
+visible = false
 position = Vector2(4077, -4916)
 
 [node name="EnemyShooter3" parent="." instance=ExtResource("9_jj1x1")]
+visible = false
 position = Vector2(279, -3356)
 
 [node name="EnemyShooter4" parent="." instance=ExtResource("9_jj1x1")]
+visible = false
 position = Vector2(2155, -668)
 
 [node name="EnemyShooter5" parent="." instance=ExtResource("9_jj1x1")]
+visible = false
 position = Vector2(1736, -666)
 
 [node name="piedras3" type="TileMapLayer" parent="."]

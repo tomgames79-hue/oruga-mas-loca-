@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjsnfdmg1sb5t"]
+
+[ext_resource type="Texture2D" uid="uid://wvtyjv5cgea1" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Square - Black.jpg" id="1_lgo28"]
+[ext_resource type="Texture2D" uid="uid://dumdym0lcsc5j" path="res://assets/morpho/the end imagen.png" id="1_vgfo5"]
+
+[node name="Level_4" type="Node2D"]
+
+[node name="Square-Black" type="Sprite2D" parent="."]
+position = Vector2(585, 325)
+scale = Vector2(2.32422, 1.33594)
+texture = ExtResource("1_lgo28")
+
+[node name="TheEndImagen" type="Sprite2D" parent="."]
+position = Vector2(588, 384)
+scale = Vector2(1.1, 1.054)
+texture = ExtResource("1_vgfo5")
