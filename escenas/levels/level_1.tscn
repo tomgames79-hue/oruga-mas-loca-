@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://dmqbysuslhk2x"]
+[gd_scene load_steps=45 format=4 uid="uid://dmqbysuslhk2x"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_ymgbi"]
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_t6yyq"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dhsgxy5ips71n" path="res://escenas/nota_2.tscn" id="17_ymgbi"]
 [ext_resource type="Texture2D" uid="uid://yj152lhwk1xt" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - BigRocks1.png" id="19_sa213"]
 [ext_resource type="Texture2D" uid="uid://bsrnwkr4smuox" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - SmallRocks.png" id="20_hvt5r"]
+[ext_resource type="PackedScene" uid="uid://dficn4iev2y3t" path="res://escenas/telaraña.tscn" id="22_eqi3u"]
 
 [sub_resource type="Gradient" id="Gradient_eqi3u"]
 offsets = PackedFloat32Array(0, 0.721839, 0.83908, 1)
@@ -3251,7 +3252,9 @@ tile_map_data = PackedByteArray("AAAJAAwAAAAAAAkAAAAJAA0AAAAAAAoAAAAOAAwAAAAFAAk
 tile_set = SubResource("TileSet_28kby")
 
 [node name="Player" parent="." instance=ExtResource("2_t6yyq")]
-position = Vector2(-26, 857)
+position = Vector2(4091, -2187)
+jump_egg = true
+shoot_egg = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("ground")]
 position = Vector2(1, 0)
@@ -3394,5 +3397,8 @@ position = Vector2(1408.07, 365.692)
 rotation = 3.14159
 scale = Vector2(64.0746, 7.85224)
 texture = SubResource("GradientTexture2D_eqi3u")
+
+[node name="Telaraña" parent="." instance=ExtResource("22_eqi3u")]
+position = Vector2(4701, -2242)
 
 [connection signal="body_entered" from="PuntoDeGuardado" to="PuntoDeGuardado" method="_on_body_entered"]

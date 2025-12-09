@@ -1,5 +1,6 @@
 extends Player_gravity
 
+
 func on_physic_process(delta):
 	super(delta)
 	var dir = Input.get_axis("left", "right")
@@ -10,6 +11,7 @@ func start():
 	if not player.attack_egg:
 		state_machine.change_to("idle")
 	else:
+		player.attack_sound.play()
 		player.anim.play("attack", -1, 2.0)
 
 

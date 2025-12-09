@@ -10,6 +10,7 @@ func start():
 	if not player.shoot_egg:
 		state_machine.change_to("idle")
 	else:
+		player.shoot_sound.play()
 		player.anim.play("shoot")
 	
 

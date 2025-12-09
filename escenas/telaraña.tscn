@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://dficn4iev2y3t"]
+
+[ext_resource type="Texture2D" uid="uid://c8wunadksccv0" path="res://assets/morpho/Telarana.png" id="1_aqp3v"]
+[ext_resource type="Script" uid="uid://y04ecse6bope" path="res://script/telaraña.gd" id="1_xjj8x"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_aqp3v"]
+a = Vector2(-34.3626, -67.8544)
+b = Vector2(-315.202, 138.079)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xjj8x"]
+a = Vector2(-42, -61)
+b = Vector2(138, -280)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_n4s4o"]
+a = Vector2(143, -283)
+b = Vector2(246, -534)
+
+[node name="Telaraña" type="StaticBody2D" groups=["tela"]]
+collision_layer = 256
+collision_mask = 33
+script = ExtResource("1_xjj8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.56727
+texture = ExtResource("1_aqp3v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -0.0242833
+shape = SubResource("SegmentShape2D_aqp3v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_xjj8x")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_n4s4o")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 32
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+rotation = -0.0242833
+shape = SubResource("SegmentShape2D_aqp3v")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_xjj8x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_n4s4o")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

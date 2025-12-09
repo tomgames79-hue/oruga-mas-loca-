@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bfmmbs4umwox5"]
+[gd_scene load_steps=38 format=3 uid="uid://bfmmbs4umwox5"]
 
 [ext_resource type="Script" uid="uid://x61hyriodxwg" path="res://script/player.gd" id="1_kkt6c"]
 [ext_resource type="Texture2D" uid="uid://bmlct4haybvlg" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 2.png" id="2_rbrud"]
@@ -22,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://cm2lb2gvmfhwx" path="res://assets/morpho/Ataque distancia/SpriteSheet Ant 2.png" id="20_neflo"]
 [ext_resource type="Texture2D" uid="uid://isasadxtu26" path="res://assets/morpho/Ataque distancia/SpriteSheet Ant 3.png" id="21_mn7w3"]
 [ext_resource type="Texture2D" uid="uid://c21wtru7uyab1" path="res://assets/morpho/Ataque distancia/SpriteSheet Ant 4.png" id="22_jt2sh"]
+[ext_resource type="AudioStream" uid="uid://dnktsponq8ise" path="res://assets/sonidos/arrastrar.mp3" id="23_jt2sh"]
+[ext_resource type="AudioStream" uid="uid://82fd4tvwf0fq" path="res://assets/sonidos/attack.wav" id="24_sdwtm"]
+[ext_resource type="AudioStream" uid="uid://c6t01dpjvngey" path="res://assets/sonidos/escupe.mp3" id="25_abcdt"]
+[ext_resource type="AudioStream" uid="uid://bo1hn66lk0wx0" path="res://assets/sonidos/huevo.mp3" id="26_sdwtm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkt6c"]
 radius = 17.0
@@ -250,7 +254,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 86
+collision_mask = 342
 script = ExtResource("1_kkt6c")
 speed = 400
 jump_force = -700
@@ -271,7 +275,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_kkt6c")
 
 [node name="hard_box" type="Area2D" parent="." groups=["player"]]
-collision_mask = 132
+collision_mask = 388
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hard_box"]
 position = Vector2(1, 0)
@@ -342,6 +346,20 @@ one_shot = true
 libraries = {
 &"": SubResource("AnimationLibrary_t3yu4")
 }
+
+[node name="walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_jt2sh")
+volume_db = -31.856
+parameters/looping = true
+
+[node name="attack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_sdwtm")
+
+[node name="shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_abcdt")
+
+[node name="Huevo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_sdwtm")
 
 [connection signal="area_entered" from="hard_box" to="." method="_on_hard_box_area_entered"]
 [connection signal="animation_finished" from="anim" to="StateMachine/player_attack" method="_on_anim_animation_finished"]

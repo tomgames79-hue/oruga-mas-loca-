@@ -1,11 +1,12 @@
 extends Area2D
 
+@onready var powerup: AudioStreamPlayer = $powerup
 @export var jump = false
 @export var attack = false
 @export var shoot = false
 
 func _on_body_entered(body: Node2D) -> void:
-	print ("huevo +1")
+	body.powerup.play()
 	body.health = 5
 	body.update_life()
 	if jump:

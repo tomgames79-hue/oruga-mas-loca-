@@ -1,6 +1,7 @@
 extends Area2D
 @onready var exclamation_mark: Sprite2D = $ExclamationMark
 const NOTA_1 = preload("res://dialogues/nota 1.dialogue")
+@onready var pagina: AudioStreamPlayer = $pagina
 
 
 var is_player_close = false
@@ -29,6 +30,7 @@ func _on_area_exited(area: Area2D):
 	
 func _on_dialogue_started(resource: DialogueResource):
 	is_dialogue_active = true 
+
 
 func _on_dialogue_ended(resource: DialogueResource):
 	is_dialogue_active = false

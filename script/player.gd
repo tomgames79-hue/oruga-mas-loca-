@@ -5,6 +5,10 @@ var states:Player_states = Player_states.new()
 var animations:Player_animations = Player_animations.new()
 @onready var state_label: Label = $StateLabel
 @onready var anim: AnimationPlayer = $anim
+@onready var attack_sound: AudioStreamPlayer = $attack
+@onready var walk_sound: AudioStreamPlayer = $walk
+@onready var shoot_sound: AudioStreamPlayer = $shoot
+@onready var powerup: AudioStreamPlayer = $Huevo
 
 
 @export_category("MOVEMENT")

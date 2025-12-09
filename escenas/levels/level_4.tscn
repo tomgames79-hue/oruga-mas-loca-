@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjsnfdmg1sb5t"]
+[gd_scene load_steps=4 format=3 uid="uid://cjsnfdmg1sb5t"]
 
 [ext_resource type="Texture2D" uid="uid://wvtyjv5cgea1" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Square - Black.jpg" id="1_lgo28"]
 [ext_resource type="Texture2D" uid="uid://dumdym0lcsc5j" path="res://assets/morpho/the end imagen.png" id="1_vgfo5"]
+[ext_resource type="Script" uid="uid://85ojj3a3h3ya" path="res://script/final.gd" id="1_wsp4y"]
 
 [node name="Level_4" type="Node2D"]
+script = ExtResource("1_wsp4y")
 
 [node name="Square-Black" type="Sprite2D" parent="."]
 position = Vector2(585, 325)
@@ -14,3 +16,10 @@ texture = ExtResource("1_lgo28")
 position = Vector2(588, 384)
 scale = Vector2(1.1, 1.054)
 texture = ExtResource("1_vgfo5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
