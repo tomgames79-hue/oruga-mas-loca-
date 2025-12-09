@@ -3308,12 +3308,6 @@ position = Vector2(-332, -2955)
 rotation = 1.61903
 shoot = true
 
-[node name="EggHealth" parent="." instance=ExtResource("8_28kby")]
-modulate = Color(0.976024, 0.186362, 0.124918, 0.937255)
-position = Vector2(174, -3012)
-rotation = 1.61903
-shoot = true
-
 [node name="GUI" parent="." instance=ExtResource("9_q27fe")]
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
