@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn1i01ef3qijm"]
+
+[ext_resource type="Texture2D" uid="uid://dxjpfsda2yrx6" path="res://assets/morpho/capsula de morpho.png" id="1_xxwfx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxwfx"]
+size = Vector2(209.892, 406.127)
+
+[node name="CapsulaDeMorpho" type="Sprite2D"]
+rotation = -0.79942
+scale = Vector2(0.266667, 0.233333)
+texture = ExtResource("1_xxwfx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.12119, 19.554)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_xxwfx")
