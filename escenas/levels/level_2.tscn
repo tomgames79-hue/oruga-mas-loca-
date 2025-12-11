@@ -3343,7 +3343,7 @@ shoot_egg = true
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
 zoom = Vector2(1.5, 1.5)
-limit_left = 0
+limit_left = 50
 limit_right = 4900
 limit_bottom = -200
 position_smoothing_speed = 10.0

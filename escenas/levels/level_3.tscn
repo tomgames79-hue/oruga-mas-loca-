@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bl00c6ptvsrol"]
+[gd_scene load_steps=33 format=4 uid="uid://bl00c6ptvsrol"]
 
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="1_8f64v"]
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_ygmic"]
@@ -15,7 +15,7 @@
 
 [sub_resource type="Gradient" id="Gradient_61ogv"]
 offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0.999667, 0.0436886, 0.0241992, 1, 0.210659, 0.00029399, 0.00118014, 1, 0.129412, 0, 0.00392157, 1)
+colors = PackedColorArray(0.999796, 0.265112, 0.205366, 1, 0.210659, 0.00029399, 0.00118014, 1, 0.129412, 0, 0.00392157, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_x3s20"]
 noise_type = 2
@@ -39,14 +39,12 @@ color_ramp = SubResource("Gradient_61ogv")
 noise = SubResource("FastNoiseLite_x3s20")
 
 [sub_resource type="Gradient" id="Gradient_28kby"]
-offsets = PackedFloat32Array(0, 0.170115, 0.382609, 0.42268, 0.573913, 0.730435)
-colors = PackedColorArray(0.121653, 0.0217094, 0, 0.321569, 0.482559, 0.345203, 0.291666, 0.145098, 0.47194, 0.468475, 0.224522, 0.364706, 0.408851, 0.629057, 0.284918, 0.261115, 0.844942, 3.27289e-06, 7.70092e-07, 0.152941, 0.145098, 0.913725, 0.227451, 0.152941)
+offsets = PackedFloat32Array(0, 0.207317, 0.382609, 0.42268, 0.573913, 0.730435)
+colors = PackedColorArray(1, 0.690196, 0.392157, 0.321569, 0.741176, 0.505882, 0.290196, 0.145098, 0.784314, 0.298039, 0.180392, 0.364706, 0.732825, 0.2733, 0.121058, 0.262745, 0.808128, 7.08003e-05, 3.34027e-05, 0.152941, 0.917647, 0.258824, 0.247059, 0.152941)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_axga0"]
 gradient = SubResource("Gradient_28kby")
 fill_from = Vector2(1, 0.410345)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_xjtvu"]
 
 [sub_resource type="Gradient" id="Gradient_j7n1y"]
 colors = PackedColorArray(1, 1, 1, 0.25098, 1, 1, 1, 0)
@@ -3194,15 +3192,6 @@ offset_right = 7381.0
 offset_bottom = 27594.0
 scale = Vector2(0.995918, -0.984327)
 texture = SubResource("GradientTexture2D_axga0")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-modulate = Color(0.456282, 0.139685, 0.178731, 1)
-offset_left = -2044.0
-offset_top = -825.0
-offset_right = 7480.0
-offset_bottom = 8768.0
-texture = SubResource("CanvasTexture_xjtvu")
 
 [node name="TextureRect6" type="TextureRect" parent="."]
 texture_filter = 1

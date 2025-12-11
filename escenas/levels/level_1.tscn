@@ -3441,12 +3441,11 @@ scale = Vector2(0.428, 0.344)
 texture = ExtResource("15_5royd")
 
 [node name="Nota1" parent="." instance=ExtResource("16_o7sfa")]
-z_index = 2
-position = Vector2(778, -1356)
+position = Vector2(751, -1355)
 
 [node name="Nota2" parent="." instance=ExtResource("17_ymgbi")]
 z_index = 2
-position = Vector2(4840, -2974)
+position = Vector2(4843, -2988)
 
 [node name="Square-Black" type="Sprite2D" parent="."]
 z_index = 12

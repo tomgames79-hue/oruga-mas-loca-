@@ -1,7 +1,6 @@
 extends Area2D
 @onready var exclamation_mark: Sprite2D = $ExclamationMark
 const NOTA_1 = preload("res://dialogues/nota 1.dialogue")
-@onready var pagina: AudioStreamPlayer = $pagina
 
 
 var is_player_close = false
