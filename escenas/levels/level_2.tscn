@@ -38,8 +38,8 @@ domain_warp_fractal_octaves = 1
 domain_warp_fractal_lacunarity = 8.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aku6i"]
-color_ramp = SubResource("Gradient_ymgbi")
 noise = SubResource("FastNoiseLite_t6yyq")
+color_ramp = SubResource("Gradient_ymgbi")
 
 [sub_resource type="Gradient" id="Gradient_uo3qe"]
 offsets = PackedFloat32Array(0, 0.170115, 0.382609, 0.42268, 0.573913, 0.730435)
@@ -3270,12 +3270,13 @@ size = Vector2(134, 338)
 [node name="Level_2" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.126802, 0.576929, 0.126575, 1)
+modulate = Color(0.1254902, 0.5764706, 0.1254902, 0.39607844)
 offset_left = -1616.0
 offset_top = -7152.0
 offset_right = 6453.0
 offset_bottom = -39.0
 texture = SubResource("NoiseTexture2D_aku6i")
+stretch_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(0.742282, 1, 0.545867, 1)
@@ -3287,7 +3288,7 @@ texture = SubResource("GradientTexture2D_ex27e")
 
 [node name="Puerta" parent="." instance=ExtResource("8_k3opc")]
 position = Vector2(4294, -4857)
-nivel_objetivo_path = "uid://bl00c6ptvsrol"
+nivel_objetivo_path = "uid://dngd5aq8qcuve"
 
 [node name="TextureRect6" type="TextureRect" parent="."]
 texture_filter = 1

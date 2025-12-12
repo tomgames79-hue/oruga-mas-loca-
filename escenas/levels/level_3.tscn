@@ -13,11 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://bsrnwkr4smuox" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - SmallRocks.png" id="8_8f64v"]
 [ext_resource type="PackedScene" uid="uid://b5pngtwt75pff" path="res://escenas/egg.tscn" id="12_ligf1"]
 
-[sub_resource type="Gradient" id="Gradient_61ogv"]
+[sub_resource type="Gradient" id="Gradient_ligf1"]
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(0.999796, 0.265112, 0.205366, 1, 0.210659, 0.00029399, 0.00118014, 1, 0.129412, 0, 0.00392157, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_x3s20"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u4w2t"]
 noise_type = 2
 seed = 9
 frequency = 0.043
@@ -35,26 +35,26 @@ domain_warp_fractal_octaves = 1
 domain_warp_fractal_lacunarity = 8.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dqjid"]
-color_ramp = SubResource("Gradient_61ogv")
-noise = SubResource("FastNoiseLite_x3s20")
+noise = SubResource("FastNoiseLite_u4w2t")
+color_ramp = SubResource("Gradient_ligf1")
 
-[sub_resource type="Gradient" id="Gradient_28kby"]
+[sub_resource type="Gradient" id="Gradient_c361x"]
 offsets = PackedFloat32Array(0, 0.207317, 0.382609, 0.42268, 0.573913, 0.730435)
 colors = PackedColorArray(1, 0.690196, 0.392157, 0.321569, 0.741176, 0.505882, 0.290196, 0.145098, 0.784314, 0.298039, 0.180392, 0.364706, 0.732825, 0.2733, 0.121058, 0.262745, 0.808128, 7.08003e-05, 3.34027e-05, 0.152941, 0.917647, 0.258824, 0.247059, 0.152941)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_axga0"]
-gradient = SubResource("Gradient_28kby")
+gradient = SubResource("Gradient_c361x")
 fill_from = Vector2(1, 0.410345)
 
-[sub_resource type="Gradient" id="Gradient_j7n1y"]
+[sub_resource type="Gradient" id="Gradient_o3p5t"]
 colors = PackedColorArray(1, 1, 1, 0.25098, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_61ogv"]
-gradient = SubResource("Gradient_j7n1y")
+gradient = SubResource("Gradient_o3p5t")
 fill_from = Vector2(0.573529, 0.452206)
 fill_to = Vector2(0.580882, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6cw0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_te4wc"]
 texture = ExtResource("1_ygmic")
 1:1/0 = 0
 2:1/0 = 0
@@ -194,9 +194,9 @@ texture = ExtResource("1_ygmic")
 [sub_resource type="TileSet" id="TileSet_nvrge"]
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 37
-sources/1 = SubResource("TileSetAtlasSource_i6cw0")
+sources/1 = SubResource("TileSetAtlasSource_te4wc")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_te4wc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8uo1"]
 texture = ExtResource("5_61ogv")
 margins = Vector2i(10, 0)
 texture_region_size = Vector2i(64, 64)
@@ -734,7 +734,7 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 37
-sources/0 = SubResource("TileSetAtlasSource_te4wc")
+sources/0 = SubResource("TileSetAtlasSource_g8uo1")
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ligf1"]
 tile_data = PackedInt32Array(65537, 65537, 1, 131073, 65537, 536870913, 65538, 65537, 268435457, 131074, 65537, 805306369)
@@ -742,7 +742,7 @@ tile_data = PackedInt32Array(65537, 65537, 1, 131073, 65537, 536870913, 65538, 6
 [sub_resource type="TileMapPattern" id="TileMapPattern_dqjid"]
 tile_data = PackedInt32Array(0, 1, 3, 65536, 1, 4, 131072, 1, 5, 196608, 1, 6, 262144, 1, 7, 327680, 1, 536870919, 393216, 1, 536870918, 458752, 1, 536870917, 524288, 1, 536870916, 589824, 1, 536870915, 1, 65537, 3, 65537, 65537, 4, 131073, 65537, 5, 196609, 65537, 6, 262145, 65537, 7, 327681, 65537, 536870919, 393217, 65537, 536870918, 458753, 65537, 536870917, 524289, 65537, 536870916, 589825, 65537, 536870915, 2, 131073, 3, 65538, 131073, 4, 131074, 131073, 5, 196610, 131073, 6, 262146, 131073, 7, 327682, 131073, 536870919, 393218, 131073, 536870918, 458754, 131073, 536870917, 524290, 131073, 536870916, 589826, 131073, 536870915, 3, 196609, 3, 65539, 196609, 4, 131075, 196609, 5, 196611, 196609, 6, 262147, 196609, 7, 327683, 196609, 536870919, 393219, 196609, 536870918, 458755, 196609, 536870917, 524291, 196609, 536870916, 589827, 196609, 536870915, 4, 262145, 3, 65540, 262145, 4, 131076, 262145, 5, 196612, 262145, 6, 262148, 262145, 7, 327684, 262145, 536870919, 393220, 262145, 536870918, 458756, 262145, 536870917, 524292, 262145, 536870916, 589828, 262145, 536870915, 5, 262145, 268435459, 65541, 262145, 268435460, 131077, 262145, 268435461, 196613, 262145, 268435462, 262149, 262145, 268435463, 327685, 262145, 805306375, 393221, 262145, 805306374, 458757, 262145, 805306373, 524293, 262145, 805306372, 589829, 262145, 805306371, 6, 196609, 268435459, 65542, 196609, 268435460, 131078, 196609, 268435461, 196614, 196609, 268435462, 262150, 196609, 268435463, 327686, 196609, 805306375, 393222, 196609, 805306374, 458758, 196609, 805306373, 524294, 196609, 805306372, 589830, 196609, 805306371, 7, 131073, 268435459, 65543, 131073, 268435460, 131079, 131073, 268435461, 196615, 131073, 268435462, 262151, 131073, 268435463, 327687, 131073, 805306375, 393223, 131073, 805306374, 458759, 131073, 805306373, 524295, 131073, 805306372, 589831, 131073, 805306371, 8, 65537, 268435459, 65544, 65537, 268435460, 131080, 65537, 268435461, 196616, 65537, 268435462, 262152, 65537, 268435463, 327688, 65537, 805306375, 393224, 65537, 805306374, 458760, 65537, 805306373, 524296, 65537, 805306372, 589832, 65537, 805306371, 9, 1, 268435459, 65545, 1, 268435460, 131081, 1, 268435461, 196617, 1, 268435462, 262153, 1, 268435463, 327689, 1, 805306375, 393225, 1, 805306374, 458761, 1, 805306373, 524297, 1, 805306372, 589833, 1, 805306371)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4w2t"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qb3aw"]
 texture = ExtResource("5_61ogv")
 texture_region_size = Vector2i(64, 64)
 27:0/0 = 0
@@ -1586,7 +1586,7 @@ texture_region_size = Vector2i(64, 64)
 7:31/0 = 0
 8:31/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c361x"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ttfh"]
 texture = ExtResource("6_dqjid")
 margins = Vector2i(0, 22)
 texture_region_size = Vector2i(64, 64)
@@ -1962,12 +1962,12 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 5
-sources/1 = SubResource("TileSetAtlasSource_c361x")
-sources/0 = SubResource("TileSetAtlasSource_u4w2t")
+sources/1 = SubResource("TileSetAtlasSource_1ttfh")
+sources/0 = SubResource("TileSetAtlasSource_qb3aw")
 pattern_0 = SubResource("TileMapPattern_ligf1")
 pattern_1 = SubResource("TileMapPattern_dqjid")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qb3aw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skpnu"]
 texture = ExtResource("7_axga0")
 margins = Vector2i(19, 19)
 texture_region_size = Vector2i(64, 64)
@@ -2430,7 +2430,7 @@ texture_region_size = Vector2i(64, 64)
 1:1/0 = 0
 2:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ttfh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i65s8"]
 texture = ExtResource("8_8f64v")
 texture_region_size = Vector2i(64, 64)
 1:1/0 = 0
@@ -3169,8 +3169,8 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 5
-sources/1 = SubResource("TileSetAtlasSource_1ttfh")
-sources/0 = SubResource("TileSetAtlasSource_qb3aw")
+sources/1 = SubResource("TileSetAtlasSource_i65s8")
+sources/0 = SubResource("TileSetAtlasSource_skpnu")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_axga0"]
 distance = -186.0
