@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://yj152lhwk1xt" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - BigRocks1.png" id="19_sa213"]
 [ext_resource type="Texture2D" uid="uid://bsrnwkr4smuox" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - SmallRocks.png" id="20_hvt5r"]
 [ext_resource type="PackedScene" uid="uid://dficn4iev2y3t" path="res://escenas/telaraña.tscn" id="22_eqi3u"]
-[ext_resource type="PackedScene" uid="uid://ch0ep53gip4tu" path="res://dialogues/nota_3.tscn" id="23_x3s20"]
+[ext_resource type="AudioStream" uid="uid://ccyr1ikcw7kol" path="res://assets/sonidos/ambiente.mp3" id="23_x3s20"]
 
 [sub_resource type="Gradient" id="Gradient_eqi3u"]
 offsets = PackedFloat32Array(0, 0.721839, 0.83908, 1)
@@ -3373,13 +3373,13 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_3kw3a")
 
 [node name="Enemy" parent="." instance=ExtResource("5_hvt5r")]
-position = Vector2(1890, -2127)
+position = Vector2(1889, -2136)
 
 [node name="Enemy2" parent="." instance=ExtResource("5_hvt5r")]
-position = Vector2(972, -2127)
+position = Vector2(972, -2134)
 
 [node name="Enemy3" parent="." instance=ExtResource("5_hvt5r")]
-position = Vector2(1364, -1115)
+position = Vector2(1384, -1101)
 
 [node name="NPC" parent="." instance=ExtResource("6_eqi3u")]
 position = Vector2(470, 846)
@@ -3405,7 +3405,7 @@ attack = true
 
 [node name="EggShoot" parent="." instance=ExtResource("8_28kby")]
 modulate = Color(0.737255, 0.890196, 0.0823529, 0.937255)
-position = Vector2(-332, -2955)
+position = Vector2(-326, -2923)
 rotation = 1.61903
 shoot = true
 
@@ -3495,7 +3495,10 @@ texture = SubResource("GradientTexture2D_eqi3u")
 [node name="Telaraña" parent="." instance=ExtResource("22_eqi3u")]
 position = Vector2(4701, -2242)
 
-[node name="Nota3" parent="." instance=ExtResource("23_x3s20")]
-position = Vector2(138, 763)
+[node name="ambiente" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_x3s20")
+volume_db = -5.353
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="PuntoDeGuardado" to="PuntoDeGuardado" method="_on_body_entered"]

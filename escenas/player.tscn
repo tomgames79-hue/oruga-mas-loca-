@@ -349,7 +349,7 @@ libraries = {
 
 [node name="walk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_jt2sh")
-volume_db = -31.856
+volume_db = -50.0
 parameters/looping = true
 
 [node name="attack" type="AudioStreamPlayer" parent="."]
@@ -360,6 +360,7 @@ stream = ExtResource("25_abcdt")
 
 [node name="Huevo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_sdwtm")
+volume_db = -8.412
 
 [connection signal="area_entered" from="hard_box" to="." method="_on_hard_box_area_entered"]
 [connection signal="animation_finished" from="anim" to="StateMachine/player_attack" method="_on_anim_animation_finished"]

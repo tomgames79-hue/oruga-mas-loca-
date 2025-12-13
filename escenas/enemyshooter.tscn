@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://jcobk4i6e1xj"]
+[gd_scene load_steps=10 format=3 uid="uid://jcobk4i6e1xj"]
 
-[ext_resource type="Texture2D" uid="uid://ck0ipejkyhln6" path="res://assets/Default/character_roundYellow.png" id="1_d1mdi"]
 [ext_resource type="Script" uid="uid://wncuvwaroeyo" path="res://script/enemyshooter.gd" id="1_q3iyc"]
+[ext_resource type="Texture2D" uid="uid://dimx2fnildhpu" path="res://assets/enemigos/SpriteSheet Bombardero 1.png" id="2_iwvj6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0x5n2"]
 radius = 19.5
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_d1mdi")]
+"values": [ExtResource("2_iwvj6")]
 }
 
 [sub_resource type="Animation" id="Animation_q3iyc"]
@@ -44,8 +44,24 @@ tracks/0/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_wqx0s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_iwvj6")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwvj6"]
 _data = {
+&"RESET": SubResource("Animation_wqx0s"),
 &"idle": SubResource("Animation_iwvj6"),
 &"shoot": SubResource("Animation_q3iyc")
 }
@@ -60,7 +76,8 @@ collision_mask = 11
 script = ExtResource("1_q3iyc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_d1mdi")
+scale = Vector2(-0.051, 0.094)
+texture = ExtResource("2_iwvj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0x5n2")

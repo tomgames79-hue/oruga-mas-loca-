@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://csqytl5mfx0sr"
+path="res://.godot/imported/nota 4.dialogue-ad0813e03acc049942598cf01e741bba.tres"
+
+[deps]
+
+source_file="res://dialogues/nota 4.dialogue"
+dest_files=["res://.godot/imported/nota 4.dialogue-ad0813e03acc049942598cf01e741bba.tres"]
+
+[params]
+
+defaults=true

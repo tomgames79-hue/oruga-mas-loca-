@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch0ep53gip4tu"]
+
+[ext_resource type="Script" uid="uid://c6jhg63dt10v7" path="res://script/nota_3.gd" id="1_uhmnw"]
+[ext_resource type="Texture2D" uid="uid://bu321s4ufrosv" path="res://assets/morpho/foto de notas 1.png" id="2_lpt2o"]
+[ext_resource type="Texture2D" uid="uid://bqmbgyilmnf0c" path="res://assets/morpho/[e] (1).png" id="3_5acuk"]
+[ext_resource type="AudioStream" uid="uid://cbur7jswmgxty" path="res://assets/sonidos/notas.mp3" id="4_hpbue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k1xs"]
+size = Vector2(80, 92)
+
+[node name="Nota3" type="Area2D"]
+script = ExtResource("1_uhmnw")
+
+[node name="FotoDeNotas1" type="Sprite2D" parent="."]
+position = Vector2(26, 38)
+scale = Vector2(0.228083, 0.241304)
+texture = ExtResource("2_lpt2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(30, 44)
+shape = SubResource("RectangleShape2D_7k1xs")
+
+[node name="ExclamationMark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(47.5, -57.5)
+scale = Vector2(0.372, 0.333)
+texture = ExtResource("3_5acuk")
+
+[node name="pagina" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hpbue")
+volume_db = -10.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

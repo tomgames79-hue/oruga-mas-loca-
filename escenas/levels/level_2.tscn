@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://fnneopskw56g"]
+[gd_scene load_steps=40 format=4 uid="uid://fnneopskw56g"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_5x6d8"]
 [ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="2_jj1x1"]
@@ -9,12 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://boaoyfsd5dqp4" path="res://escenas/pared_debil.tscn" id="7_jj1x1"]
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="8_k3opc"]
 [ext_resource type="PackedScene" uid="uid://jcobk4i6e1xj" path="res://escenas/enemyshooter.tscn" id="9_jj1x1"]
+[ext_resource type="PackedScene" uid="uid://ch0ep53gip4tu" path="res://escenas/nota_3.tscn" id="10_2wt6k"]
 [ext_resource type="Texture2D" uid="uid://c787r1ya3mrnp" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - Floor.png" id="10_aku6i"]
 [ext_resource type="Texture2D" uid="uid://7fdc7l0t66s7" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - Platforms.png" id="11_ex27e"]
 [ext_resource type="Texture2D" uid="uid://yj152lhwk1xt" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - BigRocks1.png" id="12_k3opc"]
 [ext_resource type="Texture2D" uid="uid://bsrnwkr4smuox" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - SmallRocks.png" id="13_2wt6k"]
 [ext_resource type="PackedScene" uid="uid://b5pngtwt75pff" path="res://escenas/egg.tscn" id="14_ex27e"]
 [ext_resource type="Script" uid="uid://b0vcqkbsl4oq1" path="res://escenas/area_2d.gd" id="15_k3opc"]
+[ext_resource type="PackedScene" uid="uid://ca6gefestnppj" path="res://escenas/nota_4.tscn" id="17_5gonn"]
+[ext_resource type="AudioStream" uid="uid://ccyr1ikcw7kol" path="res://assets/sonidos/ambiente.mp3" id="18_ct3d4"]
 
 [sub_resource type="Gradient" id="Gradient_ymgbi"]
 offsets = PackedFloat32Array(0, 0.721839, 0.83908, 1)
@@ -38,8 +41,8 @@ domain_warp_fractal_octaves = 1
 domain_warp_fractal_lacunarity = 8.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aku6i"]
-noise = SubResource("FastNoiseLite_t6yyq")
 color_ramp = SubResource("Gradient_ymgbi")
+noise = SubResource("FastNoiseLite_t6yyq")
 
 [sub_resource type="Gradient" id="Gradient_uo3qe"]
 offsets = PackedFloat32Array(0, 0.170115, 0.382609, 0.42268, 0.573913, 0.730435)
@@ -196,7 +199,7 @@ texture = ExtResource("1_5x6d8")
 
 [sub_resource type="TileSet" id="TileSet_8o8it"]
 physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 37
+physics_layer_0/collision_mask = 165
 sources/1 = SubResource("TileSetAtlasSource_37kn3")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l1fr2"]
@@ -1427,7 +1430,7 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_45x7u"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 5
+physics_layer_0/collision_mask = 165
 sources/0 = SubResource("TileSetAtlasSource_bpiqi")
 sources/1 = SubResource("TileSetAtlasSource_wm742")
 
@@ -2704,7 +2707,7 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_falvg"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 5
+physics_layer_0/collision_mask = 165
 sources/1 = SubResource("TileSetAtlasSource_ct3d4")
 sources/0 = SubResource("TileSetAtlasSource_5gonn")
 pattern_0 = SubResource("TileMapPattern_aku6i")
@@ -3261,7 +3264,7 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_h3jka"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 37
+physics_layer_0/collision_mask = 165
 sources/0 = SubResource("TileSetAtlasSource_58gsa")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wt6k"]
@@ -3270,7 +3273,7 @@ size = Vector2(134, 338)
 [node name="Level_2" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(0.1254902, 0.5764706, 0.1254902, 0.39607844)
+modulate = Color(0.12549, 0.576471, 0.12549, 0.396078)
 offset_left = -1616.0
 offset_top = -7152.0
 offset_right = 6453.0
@@ -3359,16 +3362,16 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_l1fr2")
 
 [node name="Enemy" parent="." instance=ExtResource("5_0l803")]
-position = Vector2(1823, -5338)
+position = Vector2(1823, -5336)
 
 [node name="Enemy2" parent="." instance=ExtResource("5_0l803")]
-position = Vector2(2942, -5343)
+position = Vector2(2945, -5332)
 
 [node name="Enemy3" parent="." instance=ExtResource("5_0l803")]
-position = Vector2(4265, -5336)
+position = Vector2(4264, -5332)
 
 [node name="Enemy4" parent="." instance=ExtResource("5_0l803")]
-position = Vector2(4296, -3849)
+position = Vector2(4330, -3843)
 
 [node name="Killzone" parent="." instance=ExtResource("7_ex27e")]
 position = Vector2(350, -61)
@@ -3381,16 +3384,16 @@ shape = SubResource("WorldBoundaryShape2D_hfhgc")
 position = Vector2(4096, -5898)
 
 [node name="EnemyShooter2" parent="." instance=ExtResource("9_jj1x1")]
-position = Vector2(4077, -4916)
+position = Vector2(4083, -4902)
 
 [node name="EnemyShooter3" parent="." instance=ExtResource("9_jj1x1")]
 position = Vector2(279, -3356)
 
 [node name="EnemyShooter4" parent="." instance=ExtResource("9_jj1x1")]
-position = Vector2(2155, -668)
+position = Vector2(2891, -644)
 
 [node name="EnemyShooter5" parent="." instance=ExtResource("9_jj1x1")]
-position = Vector2(1736, -666)
+position = Vector2(1809, -644)
 
 [node name="piedras3" type="TileMapLayer" parent="."]
 modulate = Color(0.742282, 1, 0.545867, 1)
@@ -3491,6 +3494,18 @@ script = ExtResource("15_k3opc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PuntoDeGuardado2"]
 position = Vector2(45, 88)
 shape = SubResource("RectangleShape2D_2wt6k")
+
+[node name="nota_4" parent="." instance=ExtResource("17_5gonn")]
+position = Vector2(3215, -3134)
+
+[node name="ambiente" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_ct3d4")
+volume_db = -5.353
+autoplay = true
+parameters/looping = true
+
+[node name="Nota3" parent="." instance=ExtResource("10_2wt6k")]
+position = Vector2(255, -4882)
 
 [connection signal="body_entered" from="PuntoDeGuardado" to="PuntoDeGuardado" method="_on_body_entered"]
 [connection signal="body_entered" from="PuntoDeGuardado2" to="PuntoDeGuardado2" method="_on_body_entered"]
