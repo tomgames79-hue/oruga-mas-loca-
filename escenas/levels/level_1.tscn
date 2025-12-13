@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://dmqbysuslhk2x"]
+[gd_scene load_steps=46 format=4 uid="uid://dmqbysuslhk2x"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_ymgbi"]
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_t6yyq"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://yj152lhwk1xt" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - BigRocks1.png" id="19_sa213"]
 [ext_resource type="Texture2D" uid="uid://bsrnwkr4smuox" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - SmallRocks.png" id="20_hvt5r"]
 [ext_resource type="PackedScene" uid="uid://dficn4iev2y3t" path="res://escenas/telaraña.tscn" id="22_eqi3u"]
+[ext_resource type="PackedScene" uid="uid://ch0ep53gip4tu" path="res://dialogues/nota_3.tscn" id="23_x3s20"]
 
 [sub_resource type="Gradient" id="Gradient_eqi3u"]
 offsets = PackedFloat32Array(0, 0.721839, 0.83908, 1)
@@ -45,8 +46,8 @@ domain_warp_fractal_octaves = 1
 domain_warp_fractal_lacunarity = 8.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tl0bj"]
-noise = SubResource("FastNoiseLite_x3s20")
 color_ramp = SubResource("Gradient_eqi3u")
+noise = SubResource("FastNoiseLite_x3s20")
 
 [sub_resource type="Gradient" id="Gradient_28kby"]
 offsets = PackedFloat32Array(0, 0.170115, 0.382609, 0.42268, 0.573913, 0.730435)
@@ -2286,10 +2287,10 @@ texture_region_size = Vector2i(64, 64)
 16:2/0 = 0
 16:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32, -32, 32)
 17:2/0 = 0
-17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -7.3381577, -32, -3.3868408, -16.934216, -2.8223648, -0.5644722, 2.8223724, 14.111847, 8.46711, 32, -32, 32)
+17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -7.33816, -32, -3.38684, -16.9342, -2.82236, -0.564472, 2.82237, 14.1118, 8.46711, 32, -32, 32)
 18:3/0 = 0
 17:3/0 = 0
-17:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 6.7736893, -32, 8.46711, -19.756584, 9.596054, -5.080265, 7.3381577, 9.031582, 3.9513168, 24.836853, 0.564476, 32, -32, 32)
+17:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 6.77369, -32, 8.46711, -19.7566, 9.59605, -5.08027, 7.33816, 9.03158, 3.95132, 24.8369, 0.564476, 32, -32, 32)
 16:3/0 = 0
 16:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32, -32, 32)
 15:3/0 = 0
@@ -2303,23 +2304,23 @@ texture_region_size = Vector2i(64, 64)
 15:1/0 = 0
 15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32, -32, 32)
 16:1/0 = 0
-16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 8.467102, -32, 19.192108, -19.756588, 32, -9.031582, 32, 32, -32, 32)
+16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 8.4671, -32, 19.1921, -19.7566, 32, -9.03158, 32, 32, -32, 32)
 17:1/0 = 0
-17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10.16053, -24.836853, 0.5644722, -15.805267, 14.111847, -10.725006, 25.401321, -7.9026413, 32, -32, 32)
+17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -10.1605, -24.8369, 0.564472, -15.8053, 14.1118, -10.725, 25.4013, -7.90264, 32, -32, 32)
 14:0/0 = 0
-14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 14.111847, 32, -7.9026337, 32, 32, -32, 32)
+14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 14.1118, 32, -7.90263, 32, 32, -32, 32)
 13:0/0 = 0
-13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.805275, 26.530273, -0.564476, 19.756584, 32, 11.8539505, 32, 32, -32, 32)
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.8053, 26.5303, -0.564476, 19.7566, 32, 11.854, 32, 32, -32, 32)
 12:1/0 = 0
-12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.143433, 12.4184265, -10.16053, -6.7736893, 1.128952, -13.547371, 11.8539505, -18.62764, 21.450005, -26.530273, 32, -32, 32, 11.8539505, 32, 32, -32, 32)
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.1434, 12.4184, -10.1605, -6.77369, 1.12895, -13.5474, 11.854, -18.6276, 21.45, -26.5303, 32, -32, 32, 11.854, 32, 32, -32, 32)
 14:1/0 = 0
 14:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32, -32, 32)
 13:1/0 = 0
-13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 11.8539505, 32, 32, -32, 32)
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 11.854, 32, 32, -32, 32)
 15:0/0 = 0
-15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -9.031582, -6.2092133, -23.707905, 1.1289444, -25.401325, 10.724998, -23.143429, 20.321053, -18.063164, 32, -10.725006, 32, 32, -32, 32)
+15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -9.03158, -6.20921, -23.7079, 1.12894, -25.4013, 10.725, -23.1434, 20.3211, -18.0632, 32, -10.725, 32, 32, -32, 32)
 16:0/0 = 0
-16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -9.031582, -20.885536, -2.8223686, -11.853958, 5.6447372, -3.9513168, 16.369743, 7.3381577, 32, -32, 32)
+16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -9.03158, -20.8855, -2.82237, -11.854, 5.64474, -3.95132, 16.3697, 7.33816, 32, -32, 32)
 17:0/0 = 0
 18:2/0 = 0
 12:0/0 = 0
@@ -2793,7 +2794,7 @@ texture_region_size = Vector2i(64, 64)
 13:15/0 = 0
 13:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, 32, 32, -23, 32, -32, 21.5, -32, -32)
 14:15/0 = 0
-14:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 24.836845, -32, 25.965797, -21.450008, 26.530273, -3.3868446, 20.885529, 7.9026337, 18.62764, 25.401321, 15.240791, 32, -32, 32)
+14:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 24.8368, -32, 25.9658, -21.45, 26.5303, -3.38684, 20.8855, 7.90263, 18.6276, 25.4013, 15.2408, 32, -32, 32)
 16:15/0 = 0
 17:15/0 = 0
 18:15/0 = 0
@@ -3486,12 +3487,15 @@ texture = SubResource("GradientTexture2D_eqi3u")
 
 [node name="Square-Black7" type="Sprite2D" parent="."]
 z_index = 12
-position = Vector2(1408.0698, 312.78024)
+position = Vector2(1408.07, 312.78)
 rotation = 3.14159
-scale = Vector2(64.0746, 9.505732)
+scale = Vector2(64.0746, 9.50573)
 texture = SubResource("GradientTexture2D_eqi3u")
 
 [node name="Telaraña" parent="." instance=ExtResource("22_eqi3u")]
 position = Vector2(4701, -2242)
+
+[node name="Nota3" parent="." instance=ExtResource("23_x3s20")]
+position = Vector2(138, 763)
 
 [connection signal="body_entered" from="PuntoDeGuardado" to="PuntoDeGuardado" method="_on_body_entered"]

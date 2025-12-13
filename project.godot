@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Morphito"
 run/main_scene="uid://dwwfcnda11skg"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="uid://byncd1kdbov7n"
 config/icon="uid://cna7rxftui3w4"
 
@@ -98,7 +98,7 @@ shoot={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/my_dialogue.dialogue", "res://dialogues/nota 1.dialogue", "res://dialogues/nota 2.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/my_dialogue.dialogue", "res://dialogues/nota 1.dialogue", "res://dialogues/nota 2.dialogue", "res://dialogues/nota 3.dialogue")
 
 [layer_names]
 
