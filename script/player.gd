@@ -28,7 +28,11 @@ var facing_right = true
 @export var attack : bool = false
 @export var health = 5
 @export var cooldown = 0.5
+@export var hurt : ShaderMaterial
+@export var invulnerability_time: float = 0.8
 @onready var attack_cooldown: Timer = $AttackCooldown
+@onready var invulnerability_timer: Timer = $InvulnerabilityTimer
+var is_invulnerable: bool = false
 
 @export_category("EGGS")
 @export var jump_egg = false
@@ -48,7 +52,8 @@ func _ready() -> void:
 	$Sprite2D/SpriteBrazo.hide()
 	anim.play("idle")
 
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
@@ -77,13 +82,23 @@ func flip():
 
 
 func _on_hard_box_area_entered(area: Area2D) -> void:
-	#print(jump_egg, area.jump)
-	if area.is_in_group("enemy") or area.is_in_group("bullet_enemy"):
-		print("perdiste vida")
-		health -= 1
-		update_life()
+	if is_invulnerable:
+		return
+	if area.is_in_group("enemy_attack"):
+		_perder_vida()
 		if health <= 0:
 			get_tree().call_deferred("reload_current_scene")
+			
+			
+			start_invulnerability()
+		
+
+func start_invulnerability():
+	is_invulnerable = true
+	invulnerability_timer.start(invulnerability_time)
+	
+	$Sprite2D.material = hurt
+	$"daño".start()  
 
 func disparo():
 	#if Input.is_action_just_pressed("shoot"):
@@ -103,3 +118,21 @@ func apply_gravity(delta):
 
 func update_life():
 	$"../GUI".actualizar_vida(health)
+	$Sprite2D.material = hurt
+	$"daño".start()
+
+
+
+func _on_daño_timeout() -> void:
+		$Sprite2D.material = null
+	
+
+func _perder_vida():
+	if not is_invulnerable:  # 
+		health -= 1
+		start_invulnerability()
+		update_life()
+
+
+func _on_invulnerability_timer_timeout() -> void:
+	is_invulnerable = false

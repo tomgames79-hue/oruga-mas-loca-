@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://nuwcsm1tfcoa"]
+
+[ext_resource type="Shader" uid="uid://tr7qmii642nu" path="res://escenas/hurt.tres" id="1_v3bfj"]
+
+[resource]
+shader = ExtResource("1_v3bfj")

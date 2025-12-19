@@ -12,9 +12,13 @@ config_version=5
 
 config/name="Morphito"
 run/main_scene="uid://dwwfcnda11skg"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/image="uid://byncd1kdbov7n"
 config/icon="uid://cna7rxftui3w4"
+
+[audio]
+
+general/default_playback_type.web=0
 
 [autoload]
 
@@ -48,6 +52,7 @@ folder_colors={
 enemy=""
 ground=""
 bullet_enemy=""
+enemy_attack=""
 
 [input]
 
@@ -109,5 +114,5 @@ locale/translations_pot_files=PackedStringArray("res://dialogues/my_dialogue.dia
 2d_physics/layer_5="dialogue"
 2d_physics/layer_6="bullet"
 2d_physics/layer_7="event"
-2d_physics/layer_8="bullet_enemy"
+2d_physics/layer_8="enemy_attack"
 2d_physics/layer_9="telaraña"

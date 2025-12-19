@@ -11,7 +11,7 @@ func start():
 		state_machine.change_to("idle")
 	else:
 		player.shoot_sound.play()
-		player.anim.play("shoot")
+		player.anim.play("shoot", -1, 1.5)
 	
 
 

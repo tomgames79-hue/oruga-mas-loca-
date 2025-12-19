@@ -10,7 +10,7 @@ func handle_gravity(delta):
 func on_physic_process(delta):
 	handle_gravity(delta)
 
-func on_input(event): pass
+func on_input(_event): pass
 
 func apply_friction(input_axis, delta):
 	if input_axis == 0 and player.is_on_floor():

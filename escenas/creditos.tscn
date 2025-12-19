@@ -47,7 +47,7 @@ grow_horizontal = 0
 theme_override_constants/separation = 41
 
 [node name="Volver" type="Button" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 641.0
 offset_top = 62.0
 offset_right = 1074.0

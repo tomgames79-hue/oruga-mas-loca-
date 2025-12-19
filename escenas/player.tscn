@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://bfmmbs4umwox5"]
+[gd_scene load_steps=39 format=3 uid="uid://bfmmbs4umwox5"]
 
 [ext_resource type="Script" uid="uid://x61hyriodxwg" path="res://script/player.gd" id="1_kkt6c"]
+[ext_resource type="Material" uid="uid://nuwcsm1tfcoa" path="res://escenas/player.tres" id="2_abcdt"]
 [ext_resource type="Texture2D" uid="uid://bmlct4haybvlg" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 2.png" id="2_rbrud"]
 [ext_resource type="Texture2D" uid="uid://ckgatgea3kp4w" path="res://assets/morpho/morpho walk/SpriteSheet Walk 2.png" id="2_t3yu4"]
 [ext_resource type="Texture2D" uid="uid://dc4a6p5o424wf" path="res://assets/morpho/Idle y respiracion/SpriteSheet Idle 1.png" id="3_8b7ct"]
@@ -29,7 +30,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkt6c"]
 radius = 17.0
-height = 57.9956
+height = 56.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j7xnp"]
 radius = 17.0
@@ -255,9 +256,13 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 342
+slide_on_ceiling = false
+floor_max_angle = 1.49575
+floor_snap_length = 32.0
 script = ExtResource("1_kkt6c")
 speed = 400
 jump_force = -700
+hurt = ExtResource("2_abcdt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
@@ -270,12 +275,12 @@ position = Vector2(528.696, -127.811)
 texture = ExtResource("3_8mtn0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_kkt6c")
 
 [node name="hard_box" type="Area2D" parent="." groups=["player"]]
 collision_mask = 388
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hard_box"]
 position = Vector2(1, 0)
@@ -286,6 +291,7 @@ debug_color = Color(0.736724, 0.00226831, 0.935591, 0.42)
 [node name="hit_box" type="Area2D" parent="." groups=["attack"]]
 collision_layer = 8
 collision_mask = 68
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_box"]
 position = Vector2(56.75, -1.5)
@@ -362,8 +368,17 @@ stream = ExtResource("25_abcdt")
 stream = ExtResource("26_sdwtm")
 volume_db = -8.412
 
+[node name="daño" type="Timer" parent="."]
+wait_time = 0.506
+one_shot = true
+
+[node name="InvulnerabilityTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="hard_box" to="." method="_on_hard_box_area_entered"]
 [connection signal="animation_finished" from="anim" to="StateMachine/player_attack" method="_on_anim_animation_finished"]
 [connection signal="animation_finished" from="anim" to="StateMachine/player_shoot" method="_on_anim_animation_finished"]
+[connection signal="timeout" from="daño" to="." method="_on_daño_timeout"]
+[connection signal="timeout" from="InvulnerabilityTimer" to="." method="_on_invulnerability_timer_timeout"]
 
 [editable path="StateMachine"]

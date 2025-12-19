@@ -3469,7 +3469,6 @@ tile_set = SubResource("TileSet_45x7u")
 modulate = Color(0.976024, 0.186362, 0.124918, 0.937255)
 position = Vector2(1336, -5362)
 rotation = -1.60512
-shoot = true
 
 [node name="EggHealth2" parent="." instance=ExtResource("14_ex27e")]
 modulate = Color(0.976024, 0.186362, 0.124918, 0.937255)

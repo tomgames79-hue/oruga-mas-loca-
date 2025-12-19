@@ -46,8 +46,8 @@ domain_warp_fractal_octaves = 1
 domain_warp_fractal_lacunarity = 8.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tl0bj"]
-color_ramp = SubResource("Gradient_eqi3u")
 noise = SubResource("FastNoiseLite_x3s20")
+color_ramp = SubResource("Gradient_eqi3u")
 
 [sub_resource type="Gradient" id="Gradient_28kby"]
 offsets = PackedFloat32Array(0, 0.170115, 0.382609, 0.42268, 0.573913, 0.730435)
@@ -1606,6 +1606,7 @@ texture_region_size = Vector2i(64, 64)
 24:14/0 = 0
 25:14/0 = 0
 26:14/0 = 0
+26:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:15/0 = 0
 5:15/0 = 0
 6:15/0 = 0
@@ -1629,6 +1630,7 @@ texture_region_size = Vector2i(64, 64)
 24:15/0 = 0
 25:15/0 = 0
 26:15/0 = 0
+26:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:16/0 = 0
 5:16/0 = 0
 6:16/0 = 0
@@ -1652,6 +1654,7 @@ texture_region_size = Vector2i(64, 64)
 24:16/0 = 0
 25:16/0 = 0
 26:16/0 = 0
+26:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 4:17/0 = 0
 5:17/0 = 0
 6:17/0 = 0
@@ -1675,6 +1678,7 @@ texture_region_size = Vector2i(64, 64)
 24:17/0 = 0
 25:17/0 = 0
 26:17/0 = 0
+26:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 12:22/0 = 0
 13:22/0 = 0
 14:22/0 = 0
@@ -1900,15 +1904,21 @@ texture_region_size = Vector2i(64, 64)
 29:0/0 = 0
 29:13/0 = 0
 30:13/0 = 0
+30:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -5.08027, -6.77368, 2.2579, 22.0145, 32, -32, 32)
 30:14/0 = 0
+30:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 30:15/0 = 0
+30:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 29:15/0 = 0
 29:14/0 = 0
 30:16/0 = 0
+30:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 29:17/0 = 0
 29:16/0 = 0
 30:18/0 = 0
+30:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 30:17/0 = 0
+30:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 29:18/0 = 0
 29:19/0 = 0
 30:19/0 = 0
@@ -3352,7 +3362,7 @@ tile_map_data = PackedByteArray("AAAJAAwAAAAAAAkAAAAJAA0AAAAAAAoAAAAOAAwAAAAFAAk
 tile_set = SubResource("TileSet_28kby")
 
 [node name="Player" parent="." instance=ExtResource("2_t6yyq")]
-position = Vector2(-48, 877)
+position = Vector2(191, 871)
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("ground")]
 position = Vector2(1, 0)

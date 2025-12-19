@@ -10,7 +10,7 @@ var follow : bool = false
 func _ready() -> void:
 	velocity.x = -speed
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	detectar()
 	if !follow:
 		if is_on_wall():
@@ -58,3 +58,8 @@ func detectar():
 func _on_hit_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("attack") or area.is_in_group("bullet"):
 		health -= 1
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent().is_in_group("player"):
+		area.get_parent()._perder_vida()

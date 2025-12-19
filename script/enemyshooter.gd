@@ -43,7 +43,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
-	pass
 	if area.is_in_group("attack") or area.is_in_group("bullet"):
 		print("asasa")
 		health -= 1
