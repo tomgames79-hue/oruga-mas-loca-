@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctlvpfd13cnlh"]
+
+[ext_resource type="Texture2D" uid="uid://bsrnwkr4smuox" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - SmallRocks.png" id="1_0cg2m"]
+[ext_resource type="Script" uid="uid://cyu40r5few3dc" path="res://script/trampa.gd" id="1_shrgs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shrgs"]
+atlas = ExtResource("1_0cg2m")
+region = Rect2(1403.9392, 857.8752, 199.80713, 207.20709)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d2j85"]
+radius = 63.126858
+
+[node name="Trampa" type="RigidBody2D" node_paths=PackedStringArray("raycast") groups=["trampa"]]
+collision_layer = 512
+lock_rotation = true
+freeze = true
+script = ExtResource("1_shrgs")
+raycast = NodePath("RayCast2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_shrgs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["trampa"]]
+position = Vector2(7, 8)
+shape = SubResource("CircleShape2D_d2j85")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 350)

@@ -3376,7 +3376,7 @@ ground = NodePath("../../ground")
 
 [node name="AreaDetector" type="Area2D" parent="Player"]
 scale = Vector2(-1.50745, 1.0277)
-collision_layer = 16
+collision_layer = 17
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/AreaDetector"]

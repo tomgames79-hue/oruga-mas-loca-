@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://dngd5aq8qcuve"]
+[gd_scene load_steps=39 format=4 uid="uid://dngd5aq8qcuve"]
 
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="1_0gjpl"]
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="2_7jc1w"]
@@ -34,8 +34,8 @@ domain_warp_fractal_octaves = 1
 domain_warp_fractal_lacunarity = 8.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ho3n5"]
-color_ramp = SubResource("Gradient_61ogv")
 noise = SubResource("FastNoiseLite_x3s20")
+color_ramp = SubResource("Gradient_61ogv")
 
 [sub_resource type="Gradient" id="Gradient_28kby"]
 offsets = PackedFloat32Array(0, 0.207317, 0.382609, 0.42268, 0.573913, 0.730435)
@@ -202,6 +202,9 @@ texture = ExtResource("2_7jc1w")
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 37
 sources/1 = SubResource("TileSetAtlasSource_t725o")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mkwm1"]
+radius = 36.3456
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_spo71"]
 tile_data = PackedInt32Array(0, 1966080, 268435469, 65536, 1966080, 268435470, 131072, 1966080, 268435471, 196608, 1966080, 268435472, 262144, 1966080, 268435473, 327680, 1966080, 268435474, 393216, 1966080, 268435475, 1, 1900544, 268435469, 65537, 1900544, 268435470, 131073, 1900544, 268435471, 196609, 1900544, 268435472, 262145, 1900544, 268435473, 327681, 1900544, 268435474, 393217, 1900544, 268435475)
@@ -3277,6 +3280,14 @@ shoot_egg = true
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.4, 1.4)
 limit_bottom = 7550
+
+[node name="AreaDetector" type="Area2D" parent="Player"]
+scale = Vector2(-1.50745, 1.0277)
+collision_layer = 17
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/AreaDetector"]
+shape = SubResource("CircleShape2D_mkwm1")
 
 [node name="GUI" parent="." instance=ExtResource("4_yo8hr")]
 scale = Vector2(2, 2)

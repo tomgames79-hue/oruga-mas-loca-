@@ -53,6 +53,7 @@ enemy=""
 ground=""
 bullet_enemy=""
 enemy_attack=""
+trampa=""
 
 [input]
 
@@ -116,3 +117,4 @@ locale/translations_pot_files=PackedStringArray("res://dialogues/my_dialogue.dia
 2d_physics/layer_7="event"
 2d_physics/layer_8="enemy_attack"
 2d_physics/layer_9="telaraña"
+2d_physics/layer_10="trampa"

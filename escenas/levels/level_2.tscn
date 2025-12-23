@@ -1,12 +1,12 @@
 [gd_scene load_steps=40 format=4 uid="uid://fnneopskw56g"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_5x6d8"]
+[ext_resource type="PackedScene" uid="uid://dficn4iev2y3t" path="res://escenas/telaraña.tscn" id="2_falvg"]
 [ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="2_jj1x1"]
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="3_grqsf"]
 [ext_resource type="Script" uid="uid://bwqld3bxl273v" path="res://script/camera_2d_2.gd" id="4_0p5dh"]
 [ext_resource type="PackedScene" uid="uid://s1qgq0iynddt" path="res://escenas/enemy.tscn" id="5_0l803"]
 [ext_resource type="PackedScene" uid="uid://fotdiihjti0d" path="res://escenas/killzone.tscn" id="7_ex27e"]
-[ext_resource type="PackedScene" uid="uid://boaoyfsd5dqp4" path="res://escenas/pared_debil.tscn" id="7_jj1x1"]
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="8_k3opc"]
 [ext_resource type="PackedScene" uid="uid://jcobk4i6e1xj" path="res://escenas/enemyshooter.tscn" id="9_jj1x1"]
 [ext_resource type="PackedScene" uid="uid://ch0ep53gip4tu" path="res://escenas/nota_3.tscn" id="10_2wt6k"]
@@ -41,8 +41,8 @@ domain_warp_fractal_octaves = 1
 domain_warp_fractal_lacunarity = 8.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aku6i"]
-color_ramp = SubResource("Gradient_ymgbi")
 noise = SubResource("FastNoiseLite_t6yyq")
+color_ramp = SubResource("Gradient_ymgbi")
 
 [sub_resource type="Gradient" id="Gradient_uo3qe"]
 offsets = PackedFloat32Array(0, 0.170115, 0.382609, 0.42268, 0.573913, 0.730435)
@@ -3317,16 +3317,17 @@ offset_right = 3808.0
 offset_bottom = -137.0
 texture = SubResource("GradientTexture2D_8o8it")
 
-[node name="ParedDebil" parent="." instance=ExtResource("7_jj1x1")]
-position = Vector2(884, -5443)
-scale = Vector2(1.3, 1.3)
+[node name="Telaraña" parent="." instance=ExtResource("2_falvg")]
+position = Vector2(1070.0001, -5354)
+rotation = 1.464076
 
-[node name="ParedDebil2" parent="." instance=ExtResource("7_jj1x1")]
-position = Vector2(455, -467)
-scale = Vector2(1.3, 1.3)
+[node name="Telaraña2" parent="." instance=ExtResource("2_falvg")]
+position = Vector2(632.99994, -598)
+rotation = -0.60477674
 
-[node name="ParedDebil3" parent="." instance=ExtResource("7_jj1x1")]
-position = Vector2(3423, -329)
+[node name="Telaraña3" parent="." instance=ExtResource("2_falvg")]
+position = Vector2(3556, -523.00006)
+rotation = -0.6860008
 
 [node name="ground2" type="TileMapLayer" parent="." groups=["ground"]]
 modulate = Color(0, 0, 0, 1)
@@ -3355,7 +3356,7 @@ script = ExtResource("4_0p5dh")
 
 [node name="AreaDetector" type="Area2D" parent="Player"]
 scale = Vector2(-1.50745, 1.0277)
-collision_layer = 16
+collision_layer = 17
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/AreaDetector"]
@@ -3504,7 +3505,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="Nota3" parent="." instance=ExtResource("10_2wt6k")]
-position = Vector2(255, -4882)
+position = Vector2(255, -4835)
 
 [connection signal="body_entered" from="PuntoDeGuardado" to="PuntoDeGuardado" method="_on_body_entered"]
 [connection signal="body_entered" from="PuntoDeGuardado2" to="PuntoDeGuardado2" method="_on_body_entered"]

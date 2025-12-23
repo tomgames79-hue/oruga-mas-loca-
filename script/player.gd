@@ -91,7 +91,7 @@ func _on_hard_box_area_entered(area: Area2D) -> void:
 			
 			
 			start_invulnerability()
-		
+
 
 func start_invulnerability():
 	is_invulnerable = true
@@ -136,3 +136,8 @@ func _perder_vida():
 
 func _on_invulnerability_timer_timeout() -> void:
 	is_invulnerable = false
+
+
+func _on_hard_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("trampa"):
+		get_tree().call_deferred("reload_current_scene")

@@ -8,8 +8,8 @@
 size = Vector2(120, 140)
 
 [node name="Nota2" type="Area2D"]
-position = Vector2(10, 0)
 scale = Vector2(0.4, 0.4)
+collision_layer = 16
 script = ExtResource("1_4ajmq")
 
 [node name="FotoDeNotas2" type="Sprite2D" parent="."]

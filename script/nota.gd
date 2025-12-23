@@ -19,17 +19,17 @@ func _process(_delta: float):
 
 
 
-func _on_area_entered(area: Area2D):
+func _on_area_entered(_area: Area2D):
 	exclamation_mark.visible = true
 	is_player_close = true
 
-func _on_area_exited(area: Area2D):
+func _on_area_exited(_area: Area2D):
 	exclamation_mark.visible = false
 	is_player_close = false
 	
-func _on_dialogue_started(resource: DialogueResource):
+func _on_dialogue_started(_resource: DialogueResource):
 	is_dialogue_active = true 
 
 
-func _on_dialogue_ended(resource: DialogueResource):
+func _on_dialogue_ended(_resource: DialogueResource):
 	is_dialogue_active = false
