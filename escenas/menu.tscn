@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwwfcnda11skg"]
+[gd_scene load_steps=7 format=3 uid="uid://dwwfcnda11skg"]
 
 [ext_resource type="Script" uid="uid://ruaqf387d4wr" path="res://script/menu.gd" id="1_d7r87"]
 [ext_resource type="Texture2D" uid="uid://4a46a4di0hk" path="res://assets/morpho/MorphoMenu.jpg" id="2_d7r87"]
 [ext_resource type="AudioStream" uid="uid://crg8d2563wdfg" path="res://assets/sonidos/menu.mp3" id="3_2owot"]
+[ext_resource type="Script" uid="uid://damius06rll7" path="res://escenas/audio_control.gd" id="4_6cq3m"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2owot"]
+color = Color(0.8776157, 0.8776158, 0.8776157, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6cq3m"]
+color = Color(0, 0.6784314, 0.19607843, 1)
+thickness = 6
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -39,7 +48,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_d7r87")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MainButtons" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -54,12 +64,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 41
 
-[node name="play" type="Button" parent="VBoxContainer"]
+[node name="play" type="Button" parent="MainButtons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "JUGAR"
 
-[node name="credits" type="Button" parent="VBoxContainer"]
+[node name="options" type="Button" parent="MainButtons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "OPCIONES"
+
+[node name="credits" type="Button" parent="MainButtons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "CREDITOS"
@@ -67,7 +82,162 @@ text = "CREDITOS"
 [node name="musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_2owot")
 autoplay = true
+bus = &"Musica"
 parameters/looping = true
 
-[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_options_pressed"]
+[node name="Opciones" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -78.0
+offset_right = 168.0
+offset_bottom = 292.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -301.5
+offset_top = -121.0
+offset_right = 296.5
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 58
+text = "OPCIONES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="Button" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -77.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "VOLVER"
+
+[node name="SFX" type="HSlider" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -8.0
+offset_top = 170.0
+offset_right = -8.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_2owot")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_6cq3m")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_6cq3m")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_6cq3m")
+audio_bus_name = "SFX"
+
+[node name="musica2" type="HSlider" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 81.0
+offset_right = -8.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_2owot")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_6cq3m")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_6cq3m")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_6cq3m")
+audio_bus_name = "Musica"
+
+[node name="master" type="HSlider" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -5.0
+offset_top = 77.0
+offset_right = -5.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_2owot")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_6cq3m")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_6cq3m")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("4_6cq3m")
+audio_bus_name = "Master"
+
+[node name="Master" type="Label" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -178.0
+offset_top = -2.0
+offset_right = 168.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 37
+text = "MASTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx" type="Label" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -90.0
+offset_right = 167.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 37
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musica" type="Label" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = 1.0
+offset_right = 164.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 37
+text = "MUSICA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MainButtons/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MainButtons/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainButtons/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Opciones/back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Opciones/SFX" to="Opciones/SFX" method="_on_value_changed"]
+[connection signal="value_changed" from="Opciones/musica2" to="Opciones/musica2" method="_on_value_changed"]
+[connection signal="value_changed" from="Opciones/master" to="Opciones/master" method="_on_value_changed"]

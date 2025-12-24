@@ -356,17 +356,21 @@ libraries = {
 [node name="walk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_jt2sh")
 volume_db = -50.0
+bus = &"SFX"
 parameters/looping = true
 
 [node name="attack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_sdwtm")
+bus = &"SFX"
 
 [node name="shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_abcdt")
+bus = &"SFX"
 
 [node name="Huevo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_sdwtm")
 volume_db = -8.412
+bus = &"SFX"
 
 [node name="daño" type="Timer" parent="."]
 wait_time = 0.506

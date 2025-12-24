@@ -1,0 +1,171 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4boglli3l5yx"]
+
+[ext_resource type="Script" uid="uid://230vg1rl41a5" path="res://escenas/levels/pausa.gd" id="1_ety1p"]
+[ext_resource type="Script" uid="uid://damius06rll7" path="res://escenas/audio_control.gd" id="2_5fhux"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nllfq"]
+color = Color(0.8776157, 0.8776158, 0.8776157, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_xn2lb"]
+color = Color(0, 0.6784314, 0.19607843, 1)
+thickness = 6
+
+[node name="Pausa" type="Node"]
+process_mode = 3
+script = ExtResource("1_ety1p")
+
+[node name="Opciones" type="Panel" parent="."]
+z_index = 4
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -815.0
+offset_top = 349.0
+offset_right = -471.0
+offset_bottom = 719.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -301.5
+offset_top = -121.0
+offset_right = 296.5
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 58
+text = "OPCIONES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="Button" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -77.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "VOLVER"
+
+[node name="SFX" type="HSlider" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -8.0
+offset_top = 170.0
+offset_right = -8.0
+offset_bottom = 186.0
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_nllfq")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_xn2lb")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_xn2lb")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("2_5fhux")
+audio_bus_name = "SFX"
+
+[node name="musica2" type="HSlider" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = 81.0
+offset_right = -8.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_nllfq")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_xn2lb")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_xn2lb")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("2_5fhux")
+audio_bus_name = "Musica"
+
+[node name="master" type="HSlider" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -5.0
+offset_top = 77.0
+offset_right = -5.0
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_nllfq")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_xn2lb")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_xn2lb")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("2_5fhux")
+audio_bus_name = "Master"
+
+[node name="Master" type="Label" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -178.0
+offset_top = -2.0
+offset_right = 168.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 37
+text = "MASTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx" type="Label" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -90.0
+offset_right = 167.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 37
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musica" type="Label" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = 1.0
+offset_right = 164.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 37
+text = "MUSICA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Opciones/back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Opciones/SFX" to="Opciones/SFX" method="_on_value_changed"]
+[connection signal="value_changed" from="Opciones/musica2" to="Opciones/musica2" method="_on_value_changed"]
+[connection signal="value_changed" from="Opciones/master" to="Opciones/master" method="_on_value_changed"]

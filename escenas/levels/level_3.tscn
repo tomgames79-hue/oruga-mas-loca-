@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=4 uid="uid://bl00c6ptvsrol"]
+[gd_scene load_steps=35 format=4 uid="uid://bl00c6ptvsrol"]
 
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="1_8f64v"]
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_ygmic"]
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_kj36u"]
 [ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="3_b4x0n"]
 [ext_resource type="PackedScene" uid="uid://jcobk4i6e1xj" path="res://escenas/enemyshooter.tscn" id="4_kj36u"]
+[ext_resource type="PackedScene" uid="uid://c4boglli3l5yx" path="res://escenas/pausa.tscn" id="4_o3p5t"]
 [ext_resource type="Texture2D" uid="uid://c787r1ya3mrnp" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - Floor.png" id="5_61ogv"]
 [ext_resource type="PackedScene" uid="uid://fotdiihjti0d" path="res://escenas/killzone.tscn" id="5_dqjid"]
 [ext_resource type="Texture2D" uid="uid://7fdc7l0t66s7" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - Platforms.png" id="6_dqjid"]
@@ -3225,6 +3226,8 @@ zoom = Vector2(0.5, 0.5)
 limit_left = -100
 limit_bottom = 7000
 
+[node name="Pausa" parent="Player/Camera2D" instance=ExtResource("4_o3p5t")]
+
 [node name="GUI" parent="." instance=ExtResource("3_b4x0n")]
 scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
@@ -3323,9 +3326,11 @@ rotation = -4.6587
 shoot = true
 
 [node name="musica" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("13_u4w2t")
 volume_db = -13.0
 autoplay = true
+bus = &"Musica"
 parameters/looping = true
 
 [node name="Telaraña" parent="." instance=ExtResource("13_c361x")]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=4 uid="uid://dngd5aq8qcuve"]
+[gd_scene load_steps=40 format=4 uid="uid://dngd5aq8qcuve"]
 
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="1_0gjpl"]
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="2_7jc1w"]
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="3_mkwm1"]
+[ext_resource type="PackedScene" uid="uid://c4boglli3l5yx" path="res://escenas/pausa.tscn" id="4_vydap"]
 [ext_resource type="PackedScene" uid="uid://0mt647w0c2vw" path="res://escenas/gui.tscn" id="4_yo8hr"]
 [ext_resource type="Texture2D" uid="uid://c787r1ya3mrnp" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - Floor.png" id="5_vydap"]
 [ext_resource type="Texture2D" uid="uid://7fdc7l0t66s7" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - Platforms.png" id="6_1cfaw"]
@@ -3281,6 +3282,8 @@ shoot_egg = true
 zoom = Vector2(1.4, 1.4)
 limit_bottom = 7550
 
+[node name="Pausa" parent="Player/Camera2D" instance=ExtResource("4_vydap")]
+
 [node name="AreaDetector" type="Area2D" parent="Player"]
 scale = Vector2(-1.50745, 1.0277)
 collision_layer = 17
@@ -3338,6 +3341,8 @@ shape = SubResource("WorldBoundaryShape2D_y3gu1")
 position = Vector2(5301, 2423)
 
 [node name="musica" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("11_mkwm1")
 autoplay = true
+bus = &"Musica"
 parameters/looping = true

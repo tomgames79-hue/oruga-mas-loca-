@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://dmqbysuslhk2x"]
+[gd_scene load_steps=47 format=4 uid="uid://dmqbysuslhk2x"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_ymgbi"]
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="2_t6yyq"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bsrnwkr4smuox" path="res://assets/CaveAssetsMaaot/Assets 1024 Cave/Cave - SmallRocks.png" id="20_hvt5r"]
 [ext_resource type="PackedScene" uid="uid://dficn4iev2y3t" path="res://escenas/telaraña.tscn" id="22_eqi3u"]
 [ext_resource type="AudioStream" uid="uid://ccyr1ikcw7kol" path="res://assets/sonidos/ambiente.mp3" id="23_x3s20"]
+[ext_resource type="PackedScene" uid="uid://c4boglli3l5yx" path="res://escenas/pausa.tscn" id="24_28kby"]
 
 [sub_resource type="Gradient" id="Gradient_eqi3u"]
 offsets = PackedFloat32Array(0, 0.721839, 0.83908, 1)
@@ -3374,6 +3375,8 @@ position_smoothing_speed = 10.0
 script = ExtResource("3_uo3qe")
 ground = NodePath("../../ground")
 
+[node name="Pausa" parent="Player/Camera2D" instance=ExtResource("24_28kby")]
+
 [node name="AreaDetector" type="Area2D" parent="Player"]
 scale = Vector2(-1.50745, 1.0277)
 collision_layer = 17
@@ -3506,9 +3509,11 @@ texture = SubResource("GradientTexture2D_eqi3u")
 position = Vector2(4701, -2242)
 
 [node name="ambiente" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("23_x3s20")
 volume_db = -5.353
 autoplay = true
+bus = &"Musica"
 parameters/looping = true
 
 [connection signal="body_entered" from="PuntoDeGuardado" to="PuntoDeGuardado" method="_on_body_entered"]
