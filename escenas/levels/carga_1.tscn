@@ -1,0 +1,182 @@
+[gd_scene load_steps=11 format=3 uid="uid://cd0ix5rogtvqt"]
+
+[ext_resource type="Script" uid="uid://cfbq826a08lb2" path="res://escenas/levels/carga_1.gd" id="1_qru6j"]
+[ext_resource type="Texture2D" uid="uid://bgv5gv624cmk6" path="res://assets/morpho/morpho walk/SpriteSheet Walk 1.png" id="2_2hyrx"]
+[ext_resource type="Texture2D" uid="uid://ckgatgea3kp4w" path="res://assets/morpho/morpho walk/SpriteSheet Walk 2.png" id="3_6vdq2"]
+[ext_resource type="Texture2D" uid="uid://dhxarbgpv3hy1" path="res://assets/morpho/morpho walk/SpriteSheet Walk 3.png" id="4_gidev"]
+[ext_resource type="Texture2D" uid="uid://cbpop53a1nfl5" path="res://assets/morpho/morpho walk/SpriteSheet Walk 4.png" id="5_8roo8"]
+[ext_resource type="Texture2D" uid="uid://bqs3cpjmp00f2" path="res://assets/Default/effect_blast.png" id="6_k4p2x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5868j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2hyrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6vdq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gidev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8roo8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_xxfeu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D4:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_reh0e"]
+resource_name = "carga"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D4:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ihiim"]
+_data = {
+&"RESET": SubResource("Animation_xxfeu"),
+&"carga": SubResource("Animation_reh0e")
+}
+
+[node name="Carga1" type="Node2D"]
+script = ExtResource("1_qru6j")
+nivel_objetivo_path = "uid://fnneopskw56g"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576.00006, 256)
+scale = Vector2(0.26666668, 0.23703702)
+sprite_frames = SubResource("SpriteFrames_5868j")
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(416, 480)
+texture = ExtResource("6_k4p2x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(544, 480)
+texture = ExtResource("6_k4p2x")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(672, 480)
+texture = ExtResource("6_k4p2x")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(800, 480)
+texture = ExtResource("6_k4p2x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ihiim")
+}
+autoplay = "carga"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

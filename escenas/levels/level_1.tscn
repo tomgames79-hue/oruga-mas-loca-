@@ -3323,7 +3323,7 @@ texture = SubResource("GradientTexture2D_3kw3a")
 
 [node name="Puerta" parent="." instance=ExtResource("17_v0txx")]
 position = Vector2(4707, -1452)
-nivel_objetivo_path = "uid://fnneopskw56g"
+nivel_objetivo_path = "uid://cd0ix5rogtvqt"
 
 [node name="ground" type="TileMapLayer" parent="." groups=["ground"]]
 modulate = Color(0, 0, 0, 1)
@@ -3362,7 +3362,7 @@ tile_map_data = PackedByteArray("AAAJAAwAAAAAAAkAAAAJAA0AAAAAAAoAAAAOAAwAAAAFAAk
 tile_set = SubResource("TileSet_28kby")
 
 [node name="Player" parent="." instance=ExtResource("2_t6yyq")]
-position = Vector2(191, 871)
+position = Vector2(-87, 853)
 
 [node name="Camera2D" type="Camera2D" parent="Player" node_paths=PackedStringArray("ground")]
 position = Vector2(1, 0)

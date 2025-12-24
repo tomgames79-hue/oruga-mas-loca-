@@ -3291,7 +3291,7 @@ texture = SubResource("GradientTexture2D_ex27e")
 
 [node name="Puerta" parent="." instance=ExtResource("8_k3opc")]
 position = Vector2(4294, -4857)
-nivel_objetivo_path = "uid://dngd5aq8qcuve"
+nivel_objetivo_path = "uid://dw5ojwnvhv5yy"
 
 [node name="TextureRect6" type="TextureRect" parent="."]
 texture_filter = 1
@@ -3340,7 +3340,7 @@ scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_grqsf")]
-position = Vector2(449, -5907)
+position = Vector2(604, -5919)
 jump_egg = true
 attack_egg = true
 shoot_egg = true

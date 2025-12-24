@@ -7,7 +7,7 @@ var jugador = null
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @export var health = 2
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not jugador:
 		return
 	if jugador.global_position.x > global_position.x:

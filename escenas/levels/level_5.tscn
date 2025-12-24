@@ -3261,7 +3261,7 @@ texture = SubResource("GradientTexture2D_3md3e")
 
 [node name="Puerta" parent="." instance=ExtResource("1_0gjpl")]
 position = Vector2(-114, 389)
-nivel_objetivo_path = "uid://bl00c6ptvsrol"
+nivel_objetivo_path = "uid://5pbllytp6y0y"
 
 [node name="ground" type="TileMapLayer" parent="."]
 modulate = Color(0, 0, 0, 1)

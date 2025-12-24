@@ -71,7 +71,7 @@ _data = {
 radius = 19.0
 height = 68.0
 
-[node name="EnemyShooter" type="CharacterBody2D"]
+[node name="EnemyShooter" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 11
 script = ExtResource("1_q3iyc")
@@ -92,6 +92,7 @@ shape = SubResource("CircleShape2D_q3iyc")
 debug_color = Color(0.762751, 0.209902, 0.895549, 0.42)
 
 [node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 1.5
 one_shot = true
 
 [node name="Anim" type="AnimationPlayer" parent="."]
