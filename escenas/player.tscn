@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bfmmbs4umwox5"]
+[gd_scene load_steps=40 format=3 uid="uid://bfmmbs4umwox5"]
 
 [ext_resource type="Script" uid="uid://x61hyriodxwg" path="res://script/player.gd" id="1_kkt6c"]
 [ext_resource type="Material" uid="uid://nuwcsm1tfcoa" path="res://escenas/player.tres" id="2_abcdt"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://82fd4tvwf0fq" path="res://assets/sonidos/attack.wav" id="24_sdwtm"]
 [ext_resource type="AudioStream" uid="uid://c6t01dpjvngey" path="res://assets/sonidos/escupe.mp3" id="25_abcdt"]
 [ext_resource type="AudioStream" uid="uid://bo1hn66lk0wx0" path="res://assets/sonidos/huevo.mp3" id="26_sdwtm"]
+[ext_resource type="PackedScene" uid="uid://c4boglli3l5yx" path="res://escenas/pausa.tscn" id="28_jr8nv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kkt6c"]
 radius = 17.0
@@ -378,6 +379,8 @@ one_shot = true
 
 [node name="InvulnerabilityTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Opciones" parent="." instance=ExtResource("28_jr8nv")]
 
 [connection signal="area_entered" from="hard_box" to="." method="_on_hard_box_area_entered"]
 [connection signal="body_entered" from="hard_box" to="." method="_on_hard_box_body_entered"]

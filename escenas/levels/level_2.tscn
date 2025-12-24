@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://fnneopskw56g"]
+[gd_scene load_steps=40 format=4 uid="uid://fnneopskw56g"]
 
 [ext_resource type="Texture2D" uid="uid://cbmiqwbf273k5" path="res://assets/Dungeon Tile Set/Dungeon Tile Set/Dungeon Tile Set.png" id="1_5x6d8"]
 [ext_resource type="PackedScene" uid="uid://dficn4iev2y3t" path="res://escenas/telaraña.tscn" id="2_falvg"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bfmmbs4umwox5" path="res://escenas/player.tscn" id="3_grqsf"]
 [ext_resource type="Script" uid="uid://bwqld3bxl273v" path="res://script/camera_2d_2.gd" id="4_0p5dh"]
 [ext_resource type="PackedScene" uid="uid://s1qgq0iynddt" path="res://escenas/enemy.tscn" id="5_0l803"]
-[ext_resource type="PackedScene" uid="uid://c4boglli3l5yx" path="res://escenas/pausa.tscn" id="7_58gsa"]
 [ext_resource type="PackedScene" uid="uid://fotdiihjti0d" path="res://escenas/killzone.tscn" id="7_ex27e"]
 [ext_resource type="PackedScene" uid="uid://co050tba58qdn" path="res://escenas/puerta.tscn" id="8_k3opc"]
 [ext_resource type="PackedScene" uid="uid://jcobk4i6e1xj" path="res://escenas/enemyshooter.tscn" id="9_jj1x1"]
@@ -3354,8 +3353,6 @@ limit_right = 4900
 limit_bottom = -200
 position_smoothing_speed = 10.0
 script = ExtResource("4_0p5dh")
-
-[node name="Pausa" parent="Player/Camera2D" instance=ExtResource("7_58gsa")]
 
 [node name="AreaDetector" type="Area2D" parent="Player"]
 scale = Vector2(-1.50745, 1.0277)
