@@ -34,8 +34,8 @@ domain_warp_fractal_octaves = 1
 domain_warp_fractal_lacunarity = 8.5
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ho3n5"]
-noise = SubResource("FastNoiseLite_x3s20")
 color_ramp = SubResource("Gradient_61ogv")
+noise = SubResource("FastNoiseLite_x3s20")
 
 [sub_resource type="Gradient" id="Gradient_28kby"]
 offsets = PackedFloat32Array(0, 0.207317, 0.382609, 0.42268, 0.573913, 0.730435)

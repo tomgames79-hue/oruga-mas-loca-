@@ -6,11 +6,11 @@
 [ext_resource type="Script" uid="uid://damius06rll7" path="res://escenas/audio_control.gd" id="4_6cq3m"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_2owot"]
-color = Color(0.8776157, 0.8776158, 0.8776157, 1)
+color = Color(0.877616, 0.877616, 0.877616, 1)
 thickness = 6
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_6cq3m"]
-color = Color(0, 0.6784314, 0.19607843, 1)
+color = Color(0, 0.678431, 0.196078, 1)
 thickness = 6
 
 [node name="Menu" type="Control"]

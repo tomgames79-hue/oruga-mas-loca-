@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Morphito"
 run/main_scene="uid://dwwfcnda11skg"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="uid://byncd1kdbov7n"
 config/icon="uid://cna7rxftui3w4"
 

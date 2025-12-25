@@ -2,7 +2,7 @@
 
 [sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_48elq"]
 output_port_for_preview = 0
-constant = Color(18.892157, 18.892157, 18.892157, 1)
+constant = Color(18.8922, 18.8922, 18.8922, 1)
 
 [resource]
 code = "shader_type canvas_item;

@@ -22,9 +22,8 @@ position = Vector2(30, 44)
 shape = SubResource("RectangleShape2D_7k1xs")
 
 [node name="ExclamationMark" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(47.5, -57.5)
-scale = Vector2(0.372, 0.333)
+position = Vector2(26, -23.125)
+scale = Vector2(0.224, 0.1955)
 texture = ExtResource("3_5acuk")
 
 [node name="pagina" type="AudioStreamPlayer" parent="."]

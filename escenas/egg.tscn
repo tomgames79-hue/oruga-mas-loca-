@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bo1hn66lk0wx0" path="res://assets/sonidos/huevo.mp3" id="3_yytbw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4v4p5"]
+radius = 15.1327
 
 [node name="Egg" type="Area2D" groups=["jump"]]
 script = ExtResource("1_4v4p5")
